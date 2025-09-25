@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rant on keiron.xyz</title>
+    <link>http://localhost:1313/blog/rant/</link>
+    <description>Recent content in Rant on keiron.xyz</description>
+    <generator>Hugo</generator>
+    <language>en-GB</language>
+    <copyright>GNU Free Documentation License</copyright>
+    <lastBuildDate>Fri, 09 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/rant/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Free Electronic Health Record Manifesto</title>
+      <link>http://localhost:1313/the-free-electronic-health-record-manifesto/</link>
+      <pubDate>Fri, 09 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/the-free-electronic-health-record-manifesto/</guid>
+      <description>&lt;p&gt;A specter is haunting the National Health Service – the specter of inefficiency and fragmented healthcare data. All the powers of the health sector have entered into a holy alliance to exorcise this specter: health administrators and bureaucrats, technology vendors and proprietary software giants.&lt;/p&gt;&#xA;&lt;p&gt;A tumultuous epoch of information silos, proprietary systems, and bureaucratic red tape has dominated our healthcare landscape for far too long. The time has come to establish a new paradigm, a paradigm that champions transparency, collaboration, and interoperability. We present this manifesto as a call to arms – a call for the liberation of healthcare data for the common good of the NHS and the well-being of its patients.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Fuck you Python</title>
+      <link>http://localhost:1313/fuck-you-python/</link>
+      <pubDate>Wed, 07 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/fuck-you-python/</guid>
+      <description>&lt;p&gt;Let&amp;rsquo;s lay it out bare: Python irks me to no end. Imagine being in a relationship that&amp;rsquo;s less Romeo and Juliet, more Bonnie and Clyde on a bad day. It&amp;rsquo;s the kind of setup where even your cat gives you that &amp;ldquo;I told you so&amp;rdquo; look every time you sit down to code. Your friends stage interventions, your mam subtly suggests &amp;ldquo;seeing other languages,&amp;rdquo; but there you are, hopelessly entangled in Python&amp;rsquo;s embrace, as if it whispered sweet nothings in the form of syntactic sugar directly into your heart. For reasons beyond my own comprehension, walking away feels as impossible as not eating the 6 doughnuts you got reduced from the local Co-Op in a single sitting.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

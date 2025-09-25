@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>Fuck you Python | keiron.xyz</title>
+<meta name="title" content="Fuck you Python" />
+<meta name="description" content="Anger." />
+<meta name="keywords" content="programming,rant," />
+
+
+<meta property="og:url" content="http://localhost:1313/fuck-you-python/">
+  <meta property="og:site_name" content="keiron.xyz">
+  <meta property="og:title" content="Fuck you Python">
+  <meta property="og:description" content="Anger.">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2024-02-07T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-02-07T00:00:00+00:00">
+    <meta property="article:tag" content="Programming">
+    <meta property="article:tag" content="Rant">
+    <meta property="og:image" content="http://localhost:1313/images/share.png">
+
+
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/images/share.png">
+  <meta name="twitter:title" content="Fuck you Python">
+  <meta name="twitter:description" content="Anger.">
+
+
+
+
+  <meta itemprop="name" content="Fuck you Python">
+  <meta itemprop="description" content="Anger.">
+  <meta itemprop="datePublished" content="2024-02-07T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-02-07T00:00:00+00:00">
+  <meta itemprop="wordCount" content="689">
+  <meta itemprop="image" content="http://localhost:1313/images/share.png">
+  <meta itemprop="keywords" content="Programming,Rant">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  :root {
+    --width: 720px;
+    --font-main: Verdana, sans-serif;
+    --font-secondary: Verdana, sans-serif;
+    --font-scale: 1em;
+    --background-color: #fff;
+    --heading-color: #222;
+    --text-color: #444;
+    --link-color: #3273dc;
+    --visited-color: #8b6fcb;
+    --blockquote-color: #222;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: #01242e;
+      --heading-color: #eee;
+      --text-color: #ddd;
+      --link-color: #8cc2dd;
+      --visited-color: #8b6fcb;
+      --blockquote-color: #ccc;
+    }
+  }
+
+  body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
+  }
+
+  a {
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  nav a {
+    margin-right: 8px;
+  }
+
+  strong,
+  b {
+    color: var(--heading-color);
+  }
+
+  button {
+    margin: 0;
+    cursor: pointer;
+  }
+
+  time {
+    font-family: monospace;
+    font-style: normal;
+    font-size: 15px;
+  }
+
+  main {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px dashed;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    font-family: monospace;
+    padding: 2px;
+    border-radius: 3px;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: var(--blockquote-color);
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px 0;
+    text-align: center;
+  }
+
+  .title:hover {
+    text-decoration: none;
+  }
+
+  .title h1 {
+    font-size: 1.5em;
+  }
+
+  .inline {
+    width: auto !important;
+  }
+
+  .highlight,
+  .code {
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: var(--visited-color);
+  }
+
+</style>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+  --font-main: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
+  --font-secondary: "Crimson Text", Georgia, "Times New Roman", serif !important;
+  --background-color: #ffffff !important;
+  --heading-color: #15171a !important;
+  --text-color: #21252b !important;
+  --link-color: #0969da !important;
+  --visited-color: #8b6fcb !important;
+  --blockquote-color: #21252b !important;
+  --width: 740px !important;
+  --font-scale: 1.3em !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #ffffff !important;
+    --heading-color: #15171a !important;
+    --text-color: #21252b !important;
+    --link-color: #0969da !important;
+    --visited-color: #8b6fcb !important;
+    --blockquote-color: #21252b !important;
+  }
+}
+
+body {
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.title h1 {
+  font-size: 2.2em !important;
+  font-weight: 700 !important;
+}
+
+h1 { font-size: 2em !important; }
+h2 { font-size: 1.7em !important; }
+h3 { font-size: 1.4em !important; }
+
+main {
+  line-height: 1.7 !important;
+}
+
+body:has(.toc-sidebar) {
+  padding-right: 320px !important;
+}
+
+.toc-sidebar {
+  position: fixed !important;
+  right: 2em !important;
+  top: 2em !important;
+  width: 250px !important;
+  max-height: calc(100vh - 4em) !important;
+  overflow-y: auto !important;
+}
+
+nav {
+  font-family: var(--font-main) !important;
+}
+
+time {
+  font-family: var(--font-main) !important;
+  font-size: 14px !important;
+}
+
+.post-meta {
+  margin-bottom: 2em !important;
+  color: #666 !important;
+  font-size: 0.9em !important;
+}
+
+.reading-time {
+  color: #666 !important;
+  font-size: 0.85em !important;
+}
+
+.tags, .post-tags {
+  margin-top: 0.5em !important;
+}
+
+.tag {
+  color: #666 !important;
+  font-size: 0.8em !important;
+  margin-right: 0.5em !important;
+  text-decoration: none !important;
+}
+
+.tag:hover {
+  color: var(--link-color) !important;
+}
+
+ul.blog-posts li {
+  display: flex !important;
+  margin-bottom: 1.5em !important;
+}
+
+ul.blog-posts li span {
+  flex: 0 0 130px !important;
+}
+
+.post-description {
+  margin: 0.5em 0 0 0 !important;
+  color: #666 !important;
+  font-size: 0.9em !important;
+  line-height: 1.4 !important;
+}
+
+img[alt="me"] {
+  width: 200px !important;
+  height: auto !important;
+  border-radius: 8px !important;
+}
+
+.subtitle-container {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+  margin: 1em 0 0.5em 0 !important;
+}
+
+.post-subtitle {
+  font-size: 1.2em !important;
+  font-weight: 400 !important;
+  color: #666 !important;
+  margin: 0 !important;
+  flex: 1 !important;
+}
+
+.subtitle-container .tags {
+  margin: 0 0 0 2em !important;
+  flex-shrink: 0 !important;
+}
+
+.subtitle-rule {
+  width: 100% !important;
+  height: 1px !important;
+  border: none !important;
+  background-color: #ddd !important;
+  margin: 0.5em 0 2em 0 !important;
+}
+
+
+.toc-container {
+  background-color: #f8f9fa !important;
+  border: 1px solid #e9ecef !important;
+  border-radius: 8px !important;
+  padding: 1.5em !important;
+  font-size: 0.9em !important;
+}
+
+.toc-container h4 {
+  margin: 0 0 1em 0 !important;
+  font-size: 1em !important;
+  font-weight: 600 !important;
+  color: #333 !important;
+  border-bottom: 1px solid #ddd !important;
+  padding-bottom: 0.5em !important;
+}
+
+.toc {
+  line-height: 1.4 !important;
+}
+
+.toc ul {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin: 0 !important;
+}
+
+.toc ul ul {
+  padding-left: 1em !important;
+  margin-top: 0.3em !important;
+}
+
+.toc li {
+  margin: 0.3em 0 !important;
+}
+
+.toc a {
+  color: #666 !important;
+  text-decoration: none !important;
+  display: block !important;
+  padding: 0.2em 0 !important;
+}
+
+.toc a:hover {
+  color: var(--link-color) !important;
+  text-decoration: underline !important;
+}
+
+
+ 
+.footnotes {
+  margin-top: 3em !important;
+  padding-top: 2em !important;
+  border-top: 2px solid #ddd !important;
+  font-size: 0.9em !important;
+}
+
+.footnotes h2 {
+  font-size: 1.3em !important;
+  font-weight: 600 !important;
+  margin-bottom: 1em !important;
+  color: #333 !important;
+}
+
+.footnotes ol {
+  padding-left: 1.5em !important;
+}
+
+.footnotes li {
+  margin-bottom: 0.8em !important;
+  line-height: 1.6 !important;
+}
+
+.footnotes p {
+  margin: 0 !important;
+}
+
+.footnotes a[href^="#fnref:"] {
+  margin-left: 0.5em !important;
+  font-size: 0.8em !important;
+  text-decoration: none !important;
+  color: #666 !important;
+}
+
+.footnotes a[href^="#fnref:"]:hover {
+  color: var(--link-color) !important;
+}
+
+ 
+sup a[href^="#fn:"] {
+  text-decoration: none !important;
+  color: var(--link-color) !important;
+  font-weight: 500 !important;
+}
+
+sup a[href^="#fn:"]:hover {
+  text-decoration: underline !important;
+}
+
+ 
+.references {
+  margin-top: 3em !important;
+  padding-top: 2em !important;
+  border-top: 2px solid #ddd !important;
+}
+
+.references h2 {
+  font-size: 1.3em !important;
+  font-weight: 600 !important;
+  margin-bottom: 1em !important;
+  color: #333 !important;
+}
+
+.references ol, .references ul {
+  padding-left: 1.5em !important;
+}
+
+.references li {
+  margin-bottom: 1em !important;
+  line-height: 1.6 !important;
+}
+
+@media (max-width: 1200px) {
+  body:has(.toc-sidebar) {
+    padding-right: 20px !important;
+  }
+  
+  .toc-sidebar {
+    position: relative !important;
+    right: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    margin-bottom: 2em !important;
+  }
+}
+</style></head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>keiron.xyz</h2>
+</a>
+<nav>
+<a href="/blog/">Blog</a>
+
+<a href="/about/">About</a>
+
+</nav>
+</header>
+  <main>
+<content>
+  <div class="post-wrapper">
+    <div class="post-meta">
+      <time datetime='2024-02-07'>
+        07 Feb, 2024
+      </time>
+      <span class="reading-time">• 4 min read</span>
+    </div>
+    
+    <h1>Fuck you Python</h1>
+    
+    
+    <div class="subtitle-container">
+      <h3 class="post-subtitle">Anger.</h3>
+      
+      <div class="tags">
+        
+        <a href="/tags/programming" class="tag">#programming</a>
+        
+        <a href="/tags/rant" class="tag">#rant</a>
+        
+      </div>
+      
+    </div>
+    <hr class="subtitle-rule">
+    
+    
+    
+    
+    
+    <p>Let&rsquo;s lay it out bare: Python irks me to no end. Imagine being in a relationship that&rsquo;s less Romeo and Juliet, more Bonnie and Clyde on a bad day. It&rsquo;s the kind of setup where even your cat gives you that &ldquo;I told you so&rdquo; look every time you sit down to code. Your friends stage interventions, your mam subtly suggests &ldquo;seeing other languages,&rdquo; but there you are, hopelessly entangled in Python&rsquo;s embrace, as if it whispered sweet nothings in the form of syntactic sugar directly into your heart. For reasons beyond my own comprehension, walking away feels as impossible as not eating the 6 doughnuts you got reduced from the local Co-Op in a single sitting.</p>
+<p>Let&rsquo;s be brutally honest: Python, for all its charm and simplicity, is a fucking nightmare when it comes to package management. It seduces you with the promise of coding nirvana, only to slap you in the face with its anarchic, godforsaken dependency circus. Every damn time you think you&rsquo;re going to zip through a project, you end up in the ninth circle of dependency hell, sifting through version conflicts and deprecated packages like you&rsquo;re looking through your cat&rsquo;s shit for the wireless earbud that went missing.</p>
+<p>It&rsquo;s a clusterfuck of monumental proportions. Returning to an old project? Brace yourself. You&rsquo;re not just updating a few lines of code; you&rsquo;re embarking on a masochistic odyssey through the bowels of pip hell, praying to the coding gods that you won&rsquo;t have to nuke your entire environment from orbit just to make one. tiny. change. The whole ecosystem feels like it&rsquo;s held together with spit, duct tape, and the collective tears of developers who&rsquo;ve been burned one too many times.</p>
+<p>And yet, here I am, and here we all are, hooked like junkies chasing that first high. Python, with its alluring simplicity and the intoxicating rush of quick wins, keeps pulling us back into its embrace. It&rsquo;s the addiction we can&rsquo;t shake, the needle we can&rsquo;t put down. There are other languages out there, cleaner, less destructive highs, but Python? It&rsquo;s got its hooks in deep, promising the world with one hand while it ties us off with the other, delivering that euphoric hit of productivity before plunging us into the withdrawal symptoms of its package management nightmare.</p>
+<p>Despite these gripes, here&rsquo;s the absurdity: we&rsquo;re all architecting the digital world&rsquo;s infrastructure on a foundation that might as well be quicksand. Python has metastasised through our ecosystem, infecting web development with Django and Flask like a virulent strain, and dominating data science with NumPy and pandas as if it&rsquo;s on a mission to monopolise the field and cause organ failure. It&rsquo;s as pervasive as doomscrolling Twitter, and its convenience is as hard to ignore as a chocolate cake on a diet day.</p>
+<p>Yet, with great power comes the kind of responsibility that Python&rsquo;s package management system gleefully neglects, like playing Russian roulette with your production environment. It&rsquo;s like building a card house in a tornado, where every pip install could be the gust that brings it all down.</p>
+<p>So why, despite these glaring issues, do I (and countless others) keep coming back to Python? Because, at the end of the day, Python gets the job done.</p>
+<p>It&rsquo;s the devil I know, and a devilishly effective one at that. The language&rsquo;s design and its community have created something uniquely accessible and powerful. Python allows us to express complex ideas in simple terms, and there&rsquo;s beauty in that simplicity—even if it means occasionally wanting to throw my computer out of a window.</p>
+<p>So, here’s to you, Python—the language I love to hate, and hate that I love. You’re the old flame I can’t extinguish, even as I dream of eloping with a language that won’t make me want to throw my computer out of the window. Until that day comes, I’ll be here, secretly swiping right on documentation for languages that promise a less tumultuous relationship. But until I find the courage to make that leap, it’s just you and me, Python. Let’s make the most of this beautifully dysfunctional dance.</p>
+<p>Fuck you Python, I love you dearly.</p>
+
+  </div>
+  
+  
+  <div style="font-size:0.8em;display:flex;gap:16px;justify-content:center;">
+  <p>
+    
+    <a href="http://localhost:1313/in-praise-of-nano/">
+      &lt;&lt; Previous Post</a>
+        
+  </p>
+  <p>|</p>
+  <p>
+    
+    <a href="http://localhost:1313/the-free-electronic-health-record-manifesto/">Next Post >></a>
+    
+  </p>
+</div>
+
+  
+</content>
+
+  </main>
+  <footer>
+</footer>
+
+  
+</body>
+
+</html>

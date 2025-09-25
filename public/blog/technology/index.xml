@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Technology on keiron.xyz</title>
+    <link>http://localhost:1313/blog/technology/</link>
+    <description>Recent content in Technology on keiron.xyz</description>
+    <generator>Hugo</generator>
+    <language>en-GB</language>
+    <copyright>GNU Free Documentation License</copyright>
+    <lastBuildDate>Wed, 24 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/technology/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>In praise of nano</title>
+      <link>http://localhost:1313/in-praise-of-nano/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/in-praise-of-nano/</guid>
+      <description>&lt;p&gt;In the sprawling universe of software development, where complexity and feature-overflow often drown the essence of creativity, there sits a modest throne reserved for a tool that champions the elegance of simplicity: Nano. This text editor, often overshadowed by its more elaborate counterparts, deserves a sonnet of its own.&lt;/p&gt;&#xA;&lt;p&gt;Nano, the humble steward of text, serves as the unsung hero in the realm of code and prose. Unlike its brethren, which boast an arsenal of features and customisations, Nano prides itself on its straightforward demeanour. It&amp;rsquo;s the quintessential example of software that adheres to the philosophy that less, indeed, is more. In a landscape dominated by applications that strive to be jack-of-all-trades, Nano remains content in its mastery of one: allowing users to edit text efficiently and without fuss.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

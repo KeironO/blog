@@ -5,8 +5,86 @@
     <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on keiron.xyz</description>
     <generator>Hugo</generator>
-    <language>en-us</language>
-    <copyright>GPL</copyright>
+    <language>en-GB</language>
+    <copyright>GNU Free Documentation License</copyright>
+    <lastBuildDate>Fri, 05 Jul 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Politics</title>
+      <link>http://localhost:1313/blog/politics/</link>
+      <pubDate>Fri, 05 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/politics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Soapbox</title>
+      <link>http://localhost:1313/blog/soapbox/</link>
+      <pubDate>Fri, 05 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/soapbox/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Healthinformatics</title>
+      <link>http://localhost:1313/blog/healthinformatics/</link>
+      <pubDate>Fri, 09 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/healthinformatics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Rant</title>
+      <link>http://localhost:1313/blog/rant/</link>
+      <pubDate>Fri, 09 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/rant/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Programming</title>
+      <link>http://localhost:1313/blog/programming/</link>
+      <pubDate>Wed, 07 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/programming/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Joke</title>
+      <link>http://localhost:1313/blog/joke/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/joke/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Technology</title>
+      <link>http://localhost:1313/blog/technology/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/technology/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Campaigning</title>
+      <link>http://localhost:1313/blog/campaigning/</link>
+      <pubDate>Fri, 09 Jun 2017 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/campaigning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Corbyn</title>
+      <link>http://localhost:1313/blog/corbyn/</link>
+      <pubDate>Fri, 09 Jun 2017 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/corbyn/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Election2017</title>
+      <link>http://localhost:1313/blog/election2017/</link>
+      <pubDate>Fri, 09 Jun 2017 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/election2017/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Wales</title>
+      <link>http://localhost:1313/blog/wales/</link>
+      <pubDate>Fri, 09 Jun 2017 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/wales/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

@@ -1,25 +1,26 @@
 +++
 title = "About"
-description = "Hugo, the world's fastest framework for building websites"
-date = "2019-02-28"
-aliases = ["about-us", "about-hugo", "contact"]
-author = "lee.so"
+date = "2025-09-25"
 +++
 
-Written in Go, Hugo is an open source static site generator available under the [Apache Licence 2.0.](https://github.com/gohugoio/hugo/blob/master/LICENSE) Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
+Hi, I'm Keiron! I'm a data scientist working in healthcare at Cwm Taf Morgannwg University Healthboard and a passionate advocate for Free and Open Source Software.
 
-Hugo makes use of a variety of open source projects including:
+![me](/images/keiron-profile.png)
 
-- https://github.com/yuin/goldmark
-- https://github.com/alecthomas/chroma
-- https://github.com/muesli/smartcrop
-- https://github.com/spf13/cobra
-- https://github.com/spf13/viper
+As a class war social democrat, I believe technology should serve working people, not just capital. I'm passionate about how we can use data science, programming, and open source tools to build a more equitable society. My work sits at the intersection of healthcare technology, social justice, and collective liberation.
 
-Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.
+On this blog, I explore class-conscious perspectives on technology - from the politics of software development to how healthcare data can serve public good rather than private profit. I write about Python, R, healthcare innovation, FOSS advocacy, digital rights, worker power in tech, and the broader question of how we build technological systems that serve the many, not the few.
 
-Hugo is for people who want to hand code their own website without worrying about setting up complicated runtimes, dependencies and databases.
+I'm particularly interested in how technology can be a tool for collective organizing, how we can democratize access to healthcare insights, and what it means to practice data science with socialist values. Sometimes I also share thoughts on Welsh politics, the NHS, and the ongoing struggle for digital commons.
 
-Websites built with Hugo are extremely fast, secure and can be deployed anywhere including, AWS, GitHub Pages, Heroku, Netlify and any other hosting provider.
+## Connect with me
 
-Learn more and contribute on [GitHub](https://github.com/gohugoio).
+You can find me on various platforms:
+
+- **Professional**: [LinkedIn](https://www.linkedin.com/in/keirono/)
+- **Social**: [Mastodon](https://mastodon.social/@redpenguin) (@RedPenguin)
+- **Code**: [GitHub](https://github.com/KeironO) (@KeironO) | [Personal Git](https://git.keiron.xyz) (keo7)
+- **Photography**: [Flickr](https://www.flickr.com/photos/163253992@N05/)
+- **Academic**: [Google Scholar](https://scholar.google.com/citations?user=YOUR_ID)
+
+Feel free to browse around and get in touch if you'd like to connect!

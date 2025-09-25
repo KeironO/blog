@@ -5,8 +5,8 @@
     <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on keiron.xyz</description>
     <generator>Hugo</generator>
-    <language>en-us</language>
-    <copyright>GPL</copyright>
+    <language>en-GB</language>
+    <copyright>GNU Free Documentation License</copyright>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

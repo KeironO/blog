@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Isolation on keiron.xyz</title>
+    <link>http://localhost:1313/blog/isolation/</link>
+    <description>Recent content in Isolation on keiron.xyz</description>
+    <generator>Hugo</generator>
+    <language>en-GB</language>
+    <copyright>GNU Free Documentation License</copyright>
+    <lastBuildDate>Mon, 15 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/isolation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Shed, The Screen, and The Silence</title>
+      <link>http://localhost:1313/the-shed-the-screen-and-the-silence/</link>
+      <pubDate>Mon, 15 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/the-shed-the-screen-and-the-silence/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m writing this from my shed. Not metaphorically - literally a converted shed that I rent in mid-Wales, where I&amp;rsquo;ve been largely alone since March. Eunice moved back to the Valleys when lockdown started, back to her family, which made sense at the time but feels increasingly unbearable now. Video calls aren&amp;rsquo;t the same. Screens can&amp;rsquo;t replicate the simple presence of another person, the way they breathe, the small movements that let you know you&amp;rsquo;re not alone in the world.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

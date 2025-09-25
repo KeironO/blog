@@ -1,0 +1,46 @@
+{{ define "main" }}
+<content>
+  <div class="post-wrapper">
+    <div class="post-meta">
+      <time datetime='{{ .Date.Format "2006-01-02" }}'>
+        {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+      </time>
+      <span class="reading-time">• {{ .ReadingTime }} min read</span>
+    </div>
+    
+    <h1>{{ .Title }}</h1>
+    
+    {{ if .Description }}
+    <div class="subtitle-container">
+      <h3 class="post-subtitle">{{ .Description }}</h3>
+      {{ if .Params.tags }}
+      <div class="tags">
+        {{ range .Params.tags }}
+        <a href="{{ "/tags/" | relURL }}{{ . | urlize }}" class="tag">#{{ . }}</a>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+    <hr class="subtitle-rule">
+    {{ end }}
+    
+    {{ $toc := .TableOfContents }}
+    {{ if and $toc (not (eq $toc "<nav id=\"TableOfContents\"></nav>")) (eq .Section "blog") }}
+    <div class="toc-sidebar">
+      <div class="toc-container">
+        <h4>Contents</h4>
+        <div class="toc">
+          {{ $toc }}
+        </div>
+      </div>
+    </div>
+    {{ end }}
+    
+    {{ .Content }}
+  </div>
+  
+  {{ if .Site.Params.enablePostNavigator }}
+  {{ partial "post_navigator.html" . }}
+  {{ end }}
+</content>
+{{ end }}

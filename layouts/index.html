@@ -1,0 +1,29 @@
+{{ define "main" }}
+{{ .Content }}
+
+<ul class="blog-posts">
+  {{ range (where .Site.RegularPages "Section" "blog") }}
+  <li>
+    <span>
+      <i>
+        <time datetime='{{ .Date.Format "2006-01-02" }}'>
+          {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+        </time>
+      </i>
+    </span>
+    <div>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+      {{ if .Description }}
+      <p class="post-description">{{ .Description }}</p>
+      {{ end }}
+    </div>
+  </li>
+  {{ else }}
+  <li>No blog posts found</li>
+  {{ end }}
+</ul>
+
+<small>
+  <a href="/blog/">View all posts →</a>
+</small>
+{{ end }}

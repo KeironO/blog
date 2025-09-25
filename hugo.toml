@@ -1,51 +1,80 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'keiron.xyz'
-copyright = 'GPL'
-theme = "paper"
+# Base URL used when generating links to your pages
+# Set to the URL for your site
+baseURL = "https://example.com"
+
+# The name of this wonderful theme ;-).
+theme = 'hugo-bearblog'
+
+# Basic metadata configuration for your blog.
+title = "keiron.xyz"
 author = "Keiron O'Shea"
+copyright = "GNU Free Documentation License"
+languageCode = "en-GB"
+
+# Generate a nice robots.txt for SEO
+enableRobotsTXT = true
+
+# Enable taxonomies for tags
+# disableKinds = ["taxonomy"]
+# ignoreErrors = ["error-disable-taxonomy"]
+[permalinks]
+  blog = "/:slug/"
+  tags = "/blog/:slug"
 
 [menu]
-
   [[menu.main]]
-    identifier = "about"
+    name = "Blog"
+    url = "/blog/"
+    weight = 10
+  [[menu.main]]
     name = "About"
     url = "/about/"
-    weight = 10
-  [[menu.main]]
-    identifier = "contact"
-    name = "Contact"
-    url = "/contact/"
-    weight = 10
+    weight = 20
 
-[taxonomies]
-category = "categories"
-tag = "tags"
-series = "series"
+[params]
+  # The "description" of your website. This is used in the meta data of your generated html.
+  description = "Thoughts and musings from Keiron O'Shea"
 
-[privacy]
+  # The path to your "favicon". This should be a square (at least 32px x 32px) png-file.
+  # Hint: It's good practise to also put a "favicon.ico"-file into your "static"-folder.
+  favicon = "images/favicon.png"
 
-  [privacy.vimeo]
-    disabled = false
-    simple = true
+  # These "images" are used for the structured data templates. This will show up, when
+  # services like Twitter or Slack want to generate a preview of a link to your site.
+  # See https://gohugo.io/templates/internal#twitter-cards and
+  # https://gohugo.io/templates/internal#open-graph.
+  images = ["images/share.png"]
 
-  [privacy.x]
-    disabled = false
-    enableDNT = true
-    simple = true
+  # Another "title" :-). This one is used as the site_name on the Hugo's internal
+  # opengraph structured data template.
+  # See https://ogp.me/ and https://gohugo.io/templates/internal#open-graph.
+  title = "Hugo ʕ•ᴥ•ʔ Bear"
 
-  [privacy.instagram]
-    disabled = false
-    simple = true
+  # This theme will, by default, inject a made-with-line at the bottom of the page.
+  # You can turn it off, but we would really appreciate if you don't :-).
+  hideMadeWithLine = true
 
-  [privacy.youtube]
-    disabled = false
-    privacyEnhanced = true
+  # By default, if you want to read more than one blog post you have to always go
+  # back to the /blog page.
+  # By enabling this feature each blog post will have at the end a navigator
+  enablePostNavigator = true
 
-[services]
+  # By default, this theme displays dates with a format like "02 Jan, 2006", but
+  # you can customize it by setting the `dateFormat` param in your site's config
+  # file. See [Hugo's Format function docs](https://gohugo.io/functions/format/)
+  # for details. An example TOML config that uses [ISO
+  # 8601](https://en.wikipedia.org/wiki/ISO_8601) format:
+  # dateFormat = "2006-01-02"
 
-  [services.instagram]
-    disableInlineCSS = true
-
-  [services.x]
-    disableInlineCSS = true
+# Configure markup highlighter to match "Bearblog" aesthetics, see
+# https://gohugo.io/configuration/markup/#highlight
+[markup]
+  [markup.highlight]
+    style = 'friendly'
+    lineNos = true
+    lineNumbersInTable = false
+    codeFences = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+    ordered = false
