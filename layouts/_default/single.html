@@ -13,14 +13,14 @@
     {{ if .Description }}
     <div class="subtitle-container">
       <h3 class="post-subtitle">{{ .Description }}</h3>
-      {{ if .Params.tags }}
-      <div class="tags">
-        {{ range .Params.tags }}
-        <a href="{{ "/tags/" | relURL }}{{ . | urlize }}" class="tag">#{{ . }}</a>
-        {{ end }}
-      </div>
+    </div>
+    {{ if .Params.tags }}
+    <div class="tags">
+      {{ range .Params.tags }}
+      <a href="{{ "/tags/" | relURL }}{{ . | urlize }}" class="tag">#{{ . }}</a>
       {{ end }}
     </div>
+    {{ end }}
     <hr class="subtitle-rule">
     {{ end }}
     

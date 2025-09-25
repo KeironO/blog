@@ -2,30 +2,31 @@
 title = "Polanski"
 date = 2025-09-25
 draft = false
-description = "On Polanski's populist gamble with Green politics"
-tags = ['politics', 'greens', 'environment', 'populism', 'wales']
+description = "On why we need class-based politics, but worry about who fills the environmental vacuum"
+tags = ['politics', 'greens', 'environment', 'class', 'wales']
 +++
 
-I joined the Green Party on the day of the 2024 General Election. After everything that's happened with Labour - the betrayals, the triangulation, the complete abandonment of anything resembling economic and social justice - I thought maybe it was time to look elsewhere. The Greens, at least, seemed to offer something different: environmental urgency combined with social justice, a politics that recognised the climate crisis as the defining issue of our time.
+I've always been a class-first socialist. The fundamental divide in society isn't between environmentalists and anti-environmentalists - it's between those who own capital and those who sell their labour. Everything else, including the climate crisis, is filtered through that basic reality. So when Zack Polanski won the Green Party leadership with his eco-populist platform, my intellectual response was: finally, someone who gets it.
 
-I even tried setting up a Rhondda-specific group, though that effort largely failed to get off the ground. Then the leadership election was called, and Polanski announced he was running. Suddenly, Novara Media was pushing hard in his favour, and I found myself caught up in the campaign. But as I watched it unfold, I couldn't shake the uncomfortable feeling that I'd inadvertently become an entryist - that I was willing to support someone who wanted to take the Green Party and essentially turn it into Old Labour with solar panels.
+Polanski's landslide victory - 85% of the vote, the largest margin in Green Party history - represented something I'd been waiting for: a political movement that refused to separate environmental action from economic justice. His message was crystal clear: you can't ask people to worry about net zero when they're struggling to heat their homes. Climate action without wealth redistribution is middle-class theatre.
 
-That unease was enough. I left the party before the leadership vote was even held, unable to reconcile my environmental priorities with what felt like a fundamental shift away from green politics altogether.
+This is correct politics. The climate crisis and inequality aren't separate problems requiring separate solutions - they're interconnected manifestations of the same system that prioritises profit over people and planet. Polanski's approach of linking climate action with wealth taxes, renationalisation, and Universal Basic Income represents a mature understanding of how change actually happens.
 
-Don't get me wrong - the mandate is clear. Polanski won by a landslide. The membership voted overwhelmingly for this shift, this approach that positions environmental policies as fundamentally working-class issues. And perhaps they're right to try something different. The left has been losing for over a decade - maybe we need a new approach, even if it feels risky.
+I joined the Green Party on election day 2024, disgusted with Labour's rightward drift under Starmer. I even tried setting up a Rhondda group, though it never got off the ground. When the leadership campaign began, I found myself supporting Polanski's vision despite my reservations about joining what felt like an entryist movement.
 
-Polanski has gone out of his way to position himself as a populist, even going so far as to attack net zero targets as unrealistic and harmful to working families[^1]. On paper, some of this makes sense: climate change hits the poorest hardest, whilst the wealthy insulate themselves from its worst effects. The theory sounds compelling, and God knows we need politicians willing to challenge the status quo.
+But here's my problem: I left the party before the leadership vote was held.
 
-But I can't shake my unease about how this plays out in practice. I've watched as positive green-thinking improvements - cycling infrastructure, clean air zones, renewable energy transitions - get systematically attacked as "middle-class impositions on working families." Every environmental policy becomes a zero-sum battle between the planet and the poor, as if we can't possibly design solutions that benefit both[^2].
+It wasn't because I disagreed with Polanski's class analysis - I agreed with almost everything he said. It was because I couldn't shake the fear that in pivoting toward "Old Labour with solar panels," the Green Party was abandoning the very environmental expertise that made it valuable in the first place.
 
-This feels like a high-risk strategy. Yes, badly designed green policies can disproportionately impact those with the least resources. Yes, we need to be mindful of who bears the costs of environmental transition. But when you consistently frame green initiatives as attacks on ordinary people, aren't you undermining the possibility of climate action altogether? There's a fine line between challenging elitist environmentalism and playing into the narrative that fossil fuel companies want: that environmental protection is a luxury the working class can't afford[^3].
+The Greens have been the only major party consistently pushing environmental issues up the political agenda. They've done the unglamorous work of developing policy frameworks, building expertise, and maintaining pressure when everyone else was focused elsewhere. That institutional knowledge and environmental focus has been invaluable, even when their broader politics were frustratingly centrist.
 
-Maybe Polanski's approach will work. Maybe this populist turn will finally build the coalition we need for real environmental action. But I can't get over this unnerving feeling that it feels like a gamble with stakes too high to get wrong.
+My fear is this: if the Green Party becomes primarily a left-populist vehicle that happens to mention climate change, who fills the environmental advocacy vacuum? Labour certainly won't - they've proven repeatedly that environmental concerns disappear the moment they conflict with other priorities. The Lib Dems talk a good game but fold at the first sign of economic pressure.
 
-But that's a depressing thought for another day.
+This isn't about preferring middle-class environmentalism over working-class politics. It's about recognising that we need dedicated environmental advocacy alongside class-based politics, not instead of it. The climate crisis requires both economic justice and specific environmental expertise. You need people who understand carbon budgets, biodiversity loss, and renewable energy transitions, not just people who understand that inequality is bad.
 
-[^1]: In recent interviews, Polanski has described net zero targets as "middle-class obsessions that ignore the real needs of working families" and argued that environmental policies must be "grounded in economic reality rather than idealistic timelines." See his interview with Novara Media, December 2024: https://novaramedia.com/2024/12/polanski-green-leadership-interview
+Polanski's 85% victory margin shows the membership decisively rejected these concerns. Maybe they're right. Maybe eco-populism will prove more effective at delivering both environmental and social justice than the previous approach. The party membership has grown to record levels, suggesting this message resonates.
 
-[^2]: The false choice between environmental protection and working-class interests ignores successful examples like the retrofitting programmes in social housing or community energy projects that reduce fuel poverty whilst cutting emissions.
+But I can't help feeling we're conducting an experiment with stakes too high to get wrong. If this approach works, we get the politics we desperately need. If it fails, we may have lost the only party that made environmental issues a consistent priority.
 
-[^3]: This framing inadvertently echoes the arguments made by climate change deniers and fossil fuel lobbyists, who have long portrayed environmental action as elitist and economically damaging to working communities.
+The left has been losing for over a decade. We need new approaches, new coalitions, new ways of talking about change. Polanski's class-first environmentalism might be exactly what we need. I just hope someone, somewhere, is still doing the boring work of environmental policy development while we figure out whether this gamble pays off.
+
