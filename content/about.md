@@ -3,24 +3,26 @@ title = "About"
 date = "2025-09-25"
 +++
 
-Hi, I'm Keiron! I'm a data scientist working in healthcare at Cwm Taf Morgannwg University Healthboard and a passionate advocate for Free and Open Source Software.
+Hi, I'm Keiron! I'm a data scientist working in healthcare at Cwm Taf Morgannwg University Health Board, where I spend most of my time convincing Excel to behave and wondering why anyone thought I was qualified for this. I'm also a passionate advocate for Free and Open Source Software - mostly because I'm too cheap to pay for licenses and too stubborn to admit when proprietary software works better.
 
 ![me](/images/keiron-profile.png)
 
-As a class war social democrat, I believe technology should serve working people, not just capital. I'm passionate about how we can use data science, programming, and open source tools to build a more equitable society. My work sits at the intersection of healthcare technology, social justice, and collective liberation.
+I have strong opinions about technology serving people rather than profit, though I'm probably just bitter about never getting rich from cryptocurrency. My work sits at the intersection of healthcare technology, questionable life choices, and an alarming amount of caffeine consumption.
 
-On this blog, I explore class-conscious perspectives on technology - from the politics of software development to how healthcare data can serve public good rather than private profit. I write about Python, R, healthcare innovation, FOSS advocacy, digital rights, worker power in tech, and the broader question of how we build technological systems that serve the many, not the few.
+This blog is where I pretend to have insights about technology whilst mostly just complaining about things. You'll find rants about Python packaging (I love to hate it), skeptical takes on whatever tech hype is currently making venture capitalists excited, and the occasional attempt to write something useful about health informatics before getting distracted by politics.
 
-I'm particularly interested in how technology can be a tool for collective organizing, how we can democratize access to healthcare insights, and what it means to practice data science with socialist values. Sometimes I also share thoughts on Welsh politics, the NHS, and the ongoing struggle for digital commons.
+I write about software development with the confidence of someone who's broken production systems multiple times, offer hot takes on technology trends I barely understand, and sometimes share thoughts about Welsh politics and the NHS. There's probably too much complaining about various things, but at least I'm consistent.
+
+I'm interested in how technology can actually help people instead of just making everything worse, though I'm increasingly convinced that most of my job involves moving data from one broken system to another slightly different broken system whilst pretending this constitutes "digital transformation."
 
 ## Connect with me
 
-You can find me on various platforms:
+If you want to tell me I'm wrong about something, share FOSS recommendations, or just need someone to complain to, you can find me on:
 
-- **Professional**: [LinkedIn](https://www.linkedin.com/in/keirono/)
-- **Social**: [Mastodon](https://mastodon.social/@redpenguin) (@RedPenguin)
-- **Code**: [GitHub](https://github.com/KeironO) (@KeironO) | [Personal Git](https://git.keiron.xyz) (keo7)
-- **Photography**: [Flickr](https://www.flickr.com/photos/163253992@N05/)
-- **Academic**: [Google Scholar](https://scholar.google.com/citations?user=YOUR_ID)
+- **Professional networking**: [LinkedIn](https://www.linkedin.com/in/keirono/) (where I occasionally remember to update my job title)
+- **Social media**: [Mastodon](https://mastodon.social/@redpenguin) (@RedPenguin) - for when I need to shout into the void
+- **Code repositories**: [GitHub](https://github.com/KeironO) (@KeironO) | [Personal Git](https://git.keiron.xyz) (keo7) - mostly half-finished projects and commit messages written at 2am
+- **Photography**: [Flickr](https://www.flickr.com/photos/163253992@N05/) - proof that Wales is prettier than my code
+- **Academic stuff**: [Google Scholar](https://scholar.google.com/citations?user=YOUR_ID) - for the three people who might cite my work
 
-Feel free to browse around and get in touch if you'd like to connect!
+Feel free to get in touch if you want to discuss technology, complain about software, or just need someone who understands why your Python environment is broken again.
