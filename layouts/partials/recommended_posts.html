@@ -1,0 +1,49 @@
+{{ $currentPost := . }}
+{{ $relatedPosts := slice }}
+
+{{/* First try to find posts with matching tags */}}
+{{ if .Params.tags }}
+  {{ range .Site.RegularPages }}
+    {{ if and (eq .Section "blog") (ne .Permalink $currentPost.Permalink) }}
+      {{ $commonTags := intersect .Params.tags $currentPost.Params.tags }}
+      {{ if gt (len $commonTags) 0 }}
+        {{ $relatedPosts = $relatedPosts | append . }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{/* If we don't have enough related posts, add recent posts */}}
+{{ if lt (len $relatedPosts) 3 }}
+  {{ range (where .Site.RegularPages "Section" "blog") }}
+    {{ if and (ne .Permalink $currentPost.Permalink) (not (in $relatedPosts .)) }}
+      {{ $relatedPosts = $relatedPosts | append . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{/* Limit to 3 posts */}}
+{{ $relatedPosts = first 3 $relatedPosts }}
+
+{{ if gt (len $relatedPosts) 0 }}
+<div class="recommended-posts">
+  <h3>Recommended Posts</h3>
+  <ul>
+    {{ range $relatedPosts }}
+    <li>
+      <span class="recommended-date">
+        <time datetime='{{ .Date.Format "2006-01-02" }}'>
+          {{ .Date.Format "02 Jan, 2006" }}
+        </time>
+      </span>
+      <div class="recommended-content">
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        {{ if .Description }}
+        <p class="recommended-description">{{ .Description }}</p>
+        {{ end }}
+      </div>
+    </li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }}

@@ -38,6 +38,11 @@
     {{ .Content }}
   </div>
   
+  {{ if eq .Section "blog" }}
+  {{ partial "social_sharing.html" . }}
+  {{ partial "recommended_posts.html" . }}
+  {{ end }}
+  
   {{ if .Site.Params.enablePostNavigator }}
   {{ partial "post_navigator.html" . }}
   {{ end }}
