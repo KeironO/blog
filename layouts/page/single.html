@@ -1,0 +1,16 @@
+{{ define "main" }}
+<content>
+  <div class="post-wrapper">
+    <h1>{{ .Title }}</h1>
+    
+    {{ if .Description }}
+    <div class="subtitle-container">
+      <h3 class="post-subtitle">{{ .Description }}</h3>
+    </div>
+    <hr class="subtitle-rule">
+    {{ end }}
+    
+    {{ .Content }}
+  </div>
+</content>
+{{ end }}

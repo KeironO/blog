@@ -1,0 +1,76 @@
+<!-- Scroll to Top Button (only on blog pages) -->
+{{ if or (eq .Section "blog") (eq .Type "blog") }}
+<button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18,15 12,9 6,15"></polyline>
+  </svg>
+</button>
+
+<style>
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  color: var(--link-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+}
+
+.scroll-to-top:hover {
+  color: var(--visited-color);
+  transform: translateY(0) scale(1.1);
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-to-top svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .scroll-to-top {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 44px;
+    height: 44px;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const scrollButton = document.getElementById('scrollToTop');
+  
+  // Show/hide button based on scroll position
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 300) {
+      scrollButton.classList.add('visible');
+    } else {
+      scrollButton.classList.remove('visible');
+    }
+  });
+  
+  // Scroll to top when button is clicked
+  scrollButton.addEventListener('click', function() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+});
+</script>
+{{ end }}

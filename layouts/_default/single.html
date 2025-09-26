@@ -1,13 +1,6 @@
 {{ define "main" }}
 <content>
-  <div class="post-wrapper">
-    <div class="post-meta">
-      <time datetime='{{ .Date.Format "2006-01-02" }}'>
-        {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
-      </time>
-      <span class="reading-time">• {{ .ReadingTime }} min read</span>
-    </div>
-    
+  <div class="post-wrapper{{ if eq .Section "blog" }} blog-post{{ end }}">
     <h1>{{ .Title }}</h1>
     
     {{ if .Description }}
@@ -21,6 +14,12 @@
       {{ end }}
     </div>
     {{ end }}
+    <div class="post-meta">
+      <time datetime='{{ .Date.Format "2006-01-02" }}'>
+        {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+      </time>
+      <span class="reading-time">• {{ .ReadingTime }} min read</span>
+    </div>
     <hr class="subtitle-rule">
     {{ end }}
     

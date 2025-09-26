@@ -30,6 +30,14 @@ enableRobotsTXT = true
     name = "About"
     url = "/about/"
     weight = 20
+  [[menu.main]]
+    name = "Reading"
+    url = "/reading/"
+    weight = 25
+  [[menu.main]]
+    name = "RSS"
+    url = "/blog/index.xml"
+    weight = 30
 
 [params]
   # The "description" of your website. This is used in the meta data of your generated html.
