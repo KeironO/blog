@@ -460,5 +460,28 @@ sup {
 {{ partial "seo_meta.html" . }}
 {{ partial "structured_data.html" . }}
 
-<script data-goatcounter="https://keirono.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+<!-- Conditionally load analytics only for keiron.xyz -->
+<script>
+if (window.location.hostname === 'keiron.xyz') {
+  var script = document.createElement('script');
+  script.setAttribute('data-goatcounter', 'https://keirono.goatcounter.com/count');
+  script.setAttribute('async', 'true');
+  script.src = '//gc.zgo.at/count.js';
+  document.head.appendChild(script);
+}
+
+// Add failover notice for non-keiron.xyz domains
+document.addEventListener('DOMContentLoaded', function() {
+  if (window.location.hostname !== 'keiron.xyz') {
+    var notice = document.createElement('div');
+    notice.innerHTML = '<div style="margin: 20px 0; padding: 0; text-align: center; font-family: var(--font-secondary); font-size: 0.9em; color: var(--text-color); border-bottom: 1px dashed; padding-bottom: 20px;">You are viewing a mirror of this website. Visit <a href="https://keiron.xyz" style="color: var(--link-color);">keiron.xyz</a> for the primary site.</div>';
+
+    var header = document.querySelector('header');
+    if (header) {
+      header.insertAdjacentElement('afterend', notice.firstElementChild);
+    } else {
+      document.body.insertBefore(notice.firstElementChild, document.body.firstChild);
+    }
+  }
+});
+</script>

@@ -17,10 +17,10 @@ paginate = 10
 paginatePath = "page"
 rssLimit = 20
 
-# Generate a nice robots.txt for SEO
+# Generate a nice robots.txt for SEO (conditional in template)
 enableRobotsTXT = true
 
-# Enable XML sitemap generation
+# Enable XML sitemap generation (conditional in template)
 [sitemap]
   changefreq = "daily"
   priority = 0.5
