@@ -10,7 +10,7 @@ So instead of feeding another corporate platform with my reading data, I'm track
 ## 2025
 
 - **Minority Rule** by Ash Sarkar <sup>(September 2025)</sup>  
-  The media cycle she did for the book didn't do a great service to the book. Very good, unabashedly Marxist. Good insight into the downfall of New Left without being too naval gazing.
+  The media cycle around the book didn't do it justice. It's a very good, unabashedly Marxist analysis that offers valuable insights into the New Left's downfall without excessive navel-gazing.
 
 - **[The Enemy Within: The Rise and Fall of the British Communist Party](https://wellredbooks.co.uk/product/enemy-within-the-rise-and-fall-of-the-british-communist-party/)** by Francis Beckett <sup>(September 2025)</sup>
 
