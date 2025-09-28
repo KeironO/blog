@@ -148,7 +148,7 @@ enableRobotsTXT = true
     ordered = false
   [markup.goldmark]
     [markup.goldmark.renderer]
-      unsafe = false
+      unsafe = true
     [markup.goldmark.parser]
       attribute = true
       autoHeadingID = true
