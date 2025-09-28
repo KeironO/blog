@@ -1,5 +1,6 @@
 {{ if eq .Kind "page" }}
 {{ if eq .Section "blog" }}
+<!-- BlogPosting structured data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -11,12 +12,22 @@
     "name": {{ .Site.Author | jsonify }},
     "url": {{ .Site.BaseURL | jsonify }},
     "jobTitle": "Data Scientist",
-    "description": "Data scientist working in healthcare and passionate advocate for Free and Open Source Software"
+    "description": "Data scientist working in healthcare and passionate advocate for Free and Open Source Software",
+    "sameAs": [
+      "https://github.com/KeironO",
+      "https://twitter.com/KeironO"
+    ]
   },
   "publisher": {
     "@type": "Person",
     "name": {{ .Site.Author | jsonify }},
-    "url": {{ .Site.BaseURL | jsonify }}
+    "url": {{ .Site.BaseURL | jsonify }},
+    "logo": {
+      "@type": "ImageObject",
+      "url": {{ "images/keiron-profile.png" | absURL | jsonify }},
+      "width": 400,
+      "height": 400
+    }
   },
   "datePublished": {{ .Date.Format "2006-01-02T15:04:05Z07:00" | jsonify }},
   "dateModified": {{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" | jsonify }},
@@ -25,15 +36,91 @@
     "@type": "WebPage",
     "@id": {{ .Permalink | jsonify }}
   },
+  {{ with .Site.Params.images }}
+  "image": {
+    "@type": "ImageObject",
+    "url": {{ index . 0 | absURL | jsonify }},
+    "width": 1200,
+    "height": 630,
+    "caption": {{ $.Title | jsonify }}
+  },
+  {{ end }}
   {{ with .Params.tags }}
   "keywords": {{ delimit . ", " | jsonify }},
   {{ end }}
   "wordCount": {{ .WordCount }},
-  "genre": "technology, politics, programming"
+  "genre": "technology, politics, programming",
+  "inLanguage": {{ .Site.LanguageCode | jsonify }},
+  "isPartOf": {
+    "@type": "Blog",
+    "@id": {{ "/blog/" | absURL | jsonify }},
+    "name": "Blog | {{ .Site.Title }}"
+  },
+  "articleSection": {{ .Section | jsonify }},
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", "h2", "h3", ".post-content"]
+  }
+}
+</script>
+
+<!-- Breadcrumb structured data for blog posts -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": {{ .Site.BaseURL | jsonify }}
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": {{ "/blog/" | absURL | jsonify }}
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": {{ .Title | jsonify }},
+      "item": {{ .Permalink | jsonify }}
+    }
+  ]
+}
+</script>
+{{ else }}
+<!-- WebPage structured data for other pages -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": {{ .Title | jsonify }},
+  "description": {{ with .Description }}{{ . | jsonify }}{{ else }}{{ .Site.Params.description | jsonify }}{{ end }},
+  "url": {{ .Permalink | jsonify }},
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": {{ .Site.BaseURL | jsonify }}
+  },
+  "inLanguage": {{ .Site.LanguageCode | jsonify }},
+  "dateModified": {{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" | jsonify }},
+  "author": {
+    "@type": "Person",
+    "name": {{ .Site.Author | jsonify }},
+    "url": {{ .Site.BaseURL | jsonify }}
+  },
+  "mainEntity": {
+    "@type": "Article",
+    "headline": {{ .Title | jsonify }},
+    "description": {{ with .Description }}{{ . | jsonify }}{{ else }}{{ .Site.Params.description | jsonify }}{{ end }}
+  }
 }
 </script>
 {{ end }}
 {{ else if eq .Kind "home" }}
+<!-- WebSite structured data for homepage -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -46,7 +133,11 @@
     "name": {{ .Site.Author | jsonify }},
     "url": {{ .Site.BaseURL | jsonify }},
     "jobTitle": "Data Scientist",
-    "description": "Data scientist working in healthcare and passionate advocate for Free and Open Source Software"
+    "description": "Data scientist working in healthcare and passionate advocate for Free and Open Source Software",
+    "sameAs": [
+      "https://github.com/KeironO",
+      "https://twitter.com/KeironO"
+    ]
   },
   "publisher": {
     "@type": "Person",
@@ -57,6 +148,90 @@
     "@type": "SearchAction",
     "target": "{{ .Site.BaseURL }}search?q={search_term_string}",
     "query-input": "required name=search_term_string"
+  },
+  "inLanguage": {{ .Site.LanguageCode | jsonify }},
+  "copyrightYear": {{ now.Year }},
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": {{ .Site.Author | jsonify }}
+  }
+}
+</script>
+
+<!-- Person/Author structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": {{ .Site.Author | jsonify }},
+  "url": {{ .Site.BaseURL | jsonify }},
+  "jobTitle": "Data Scientist",
+  "description": "Data scientist working in healthcare and passionate advocate for Free and Open Source Software",
+  "image": {{ "images/keiron-profile.png" | absURL | jsonify }},
+  "sameAs": [
+    "https://github.com/KeironO",
+    "https://twitter.com/KeironO"
+  ],
+  "knowsAbout": [
+    "Data Science",
+    "Healthcare Technology",
+    "Open Source Software",
+    "Politics",
+    "Digital Rights",
+    "Programming",
+    "Python",
+    "Healthcare Informatics"
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Healthcare"
+  },
+  "alumniOf": {
+    "@type": "EducationalOrganization",
+    "name": "University"
+  }
+}
+</script>
+
+<!-- Blog structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "@id": {{ "/blog/" | absURL | jsonify }},
+  "name": "Blog | {{ .Site.Title }}",
+  "description": "Personal blog about technology, politics, programming, and healthcare",
+  "url": {{ "/blog/" | absURL | jsonify }},
+  "inLanguage": {{ .Site.LanguageCode | jsonify }},
+  "author": {
+    "@type": "Person",
+    "name": {{ .Site.Author | jsonify }},
+    "url": {{ .Site.BaseURL | jsonify }}
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": {{ .Site.Author | jsonify }},
+    "url": {{ .Site.BaseURL | jsonify }}
+  }
+}
+</script>
+{{ else if eq .Kind "section" }}
+<!-- Section/List page structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": {{ .Title | jsonify }},
+  "description": {{ with .Description }}{{ . | jsonify }}{{ else }}{{ .Site.Params.description | jsonify }}{{ end }},
+  "url": {{ .Permalink | jsonify }},
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": {{ .Site.BaseURL | jsonify }}
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": {{ .Title | jsonify }},
+    "numberOfItems": {{ len .Pages }}
   }
 }
 </script>

@@ -1,5 +1,26 @@
+<!-- Resource hints for fonts and analytics -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://gc.zgo.at">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+<!-- Preload critical fonts -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap"></noscript>
+
+<!-- SEO and Performance Meta Tags -->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="{{ .Permalink }}">
+
+<!-- Language and geo targeting -->
+<meta name="language" content="{{ .Site.LanguageCode }}">
+<link rel="alternate" hreflang="{{ .Site.LanguageCode }}" href="{{ .Permalink }}">
+<link rel="alternate" hreflang="x-default" href="{{ .Permalink }}">
+
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+/* Fonts loaded via preload above */
 
 :root {
   --font-main: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
@@ -116,10 +137,34 @@ ul.blog-posts li span {
   line-height: 1.4 !important;
 }
 
+/* Image optimization and lazy loading */
+img {
+  max-width: 100% !important;
+  height: auto !important;
+  loading: lazy !important;
+}
+
 img[alt="me"] {
   width: 200px !important;
-  height: auto !important;
+  height: 200px !important;
   border-radius: 8px !important;
+  object-fit: cover !important;
+}
+
+/* Lazy loading fallback for older browsers */
+img[loading="lazy"] {
+  opacity: 0 !important;
+  transition: opacity 0.3s !important;
+}
+
+img[loading="lazy"].loaded {
+  opacity: 1 !important;
+}
+
+/* Improve Core Web Vitals */
+img, iframe, video {
+  aspect-ratio: attr(width) / attr(height) !important;
+  object-fit: cover !important;
 }
 
 .subtitle-container {
@@ -470,8 +515,36 @@ if (window.location.hostname === 'keiron.xyz') {
   document.head.appendChild(script);
 }
 
-// Add failover notice for non-keiron.xyz domains
+// Lazy loading fallback for older browsers
 document.addEventListener('DOMContentLoaded', function() {
+  // Support for lazy loading in older browsers
+  if ('loading' in HTMLImageElement.prototype) {
+    const images = document.querySelectorAll('img[loading="lazy"]');
+    images.forEach(img => {
+      img.classList.add('loaded');
+    });
+  } else {
+    // Fallback for browsers that don't support native lazy loading
+    const script = document.createElement('script');
+    script.src = 'https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver';
+    script.onload = function() {
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.classList.add('loaded');
+            observer.unobserve(img);
+          }
+        });
+      });
+
+      const images = document.querySelectorAll('img[loading="lazy"]');
+      images.forEach(img => imageObserver.observe(img));
+    };
+    document.head.appendChild(script);
+  }
+
+  // Add failover notice for non-keiron.xyz domains
   if (window.location.hostname !== 'keiron.xyz') {
     var notice = document.createElement('div');
     notice.innerHTML = '<div style="margin: 20px 0; padding: 0; text-align: center; font-family: var(--font-secondary); font-size: 0.9em; color: var(--text-color); border-bottom: 1px dashed; padding-bottom: 20px;">You are viewing a mirror of this website. Visit <a href="https://keiron.xyz" style="color: var(--link-color);">keiron.xyz</a> for the primary site.</div>';

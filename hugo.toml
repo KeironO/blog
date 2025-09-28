@@ -16,15 +16,60 @@ defaultContentLanguage = "en"
 paginate = 10
 paginatePath = "page"
 rssLimit = 20
+summaryLength = 70
+enableEmoji = false
 
-# Generate a nice robots.txt for SEO (conditional in template)
+# Generate a nice robots.txt for SEO
 enableRobotsTXT = true
 
-# Enable XML sitemap generation (conditional in template)
+# Enable XML sitemap generation with optimized settings
 [sitemap]
-  changefreq = "daily"
-  priority = 0.5
+  changefreq = "weekly"
+  priority = 0.8
   filename = "sitemap.xml"
+
+# Enable minification for better performance
+[minify]
+  disableXML = false
+  disableHTML = false
+  disableCSS = false
+  disableJS = false
+  minifyOutput = true
+
+[minify.tdewolff.html]
+  keepDefaultAttrVals = false
+  keepDocumentTags = true
+  keepEndTags = true
+  keepQuotes = false
+  keepWhitespace = false
+
+# Privacy settings
+[privacy]
+  [privacy.disqus]
+    disable = true
+  [privacy.googleAnalytics]
+    disable = true
+  [privacy.instagram]
+    disable = true
+  [privacy.twitter]
+    disable = false
+  [privacy.vimeo]
+    disable = true
+  [privacy.youtube]
+    disable = false
+    privacyEnhanced = true
+
+# Security settings
+[security]
+  enableInlineShortcodes = false
+  [security.exec]
+    allow = ['^(dart-)?sass(-embedded)?$', '^go$', '^npx$', '^postcss$']
+    osEnv = ['(?i)^((HTTPS?|NO)_PROXY|PATH(EXT)?|APPDATA|TE?MP|TERM|GO\w+|(XDG_CONFIG_)?HOME|USERPROFILE|SSH_AUTH_SOCK|DISPLAY)$']
+  [security.funcs]
+    getenv = ['^HUGO_', '^CI$']
+  [security.http]
+    methods = ['(?i)GET|POST']
+    urls = ['.*']
 
 # Enable taxonomies for tags
 # disableKinds = ["taxonomy"]
@@ -101,3 +146,25 @@ enableRobotsTXT = true
     startLevel = 2
     endLevel = 4
     ordered = false
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = false
+    [markup.goldmark.parser]
+      attribute = true
+      autoHeadingID = true
+      autoHeadingIDType = "github"
+    [markup.goldmark.extensions]
+      footnote = true
+      linkify = true
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+
+# Image processing settings for performance
+[imaging]
+  resampleFilter = "Lanczos"
+  quality = 85
+  anchor = "Smart"
+  bgColor = "#ffffff"
+  hint = "photo"
