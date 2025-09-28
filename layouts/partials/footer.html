@@ -1,0 +1,11 @@
+<div style="text-align: center; margin-top: 2em; border-top: 1px solid #ccc; padding-top: 1em;">
+  <p>
+    © {{ now.Year }} {{ .Site.Params.author | default .Site.Title }}. 
+    Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International (CC BY 4.0)</a>.
+  </p>
+  {{ if not (.Param "hideMadeWithLine") }}
+  <p style="margin-top: 0.5em; font-size: 0.9em; color: #666;">
+    Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+  </p>
+  {{ end }}
+</div>

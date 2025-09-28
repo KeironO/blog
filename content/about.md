@@ -26,6 +26,5 @@ If you want to tell me I'm wrong about something, share FOSS recommendations, or
 - **Social media**: [Mastodon](https://mastodon.social/@redpenguin) (@RedPenguin) - for when I need to shout into the void
 - **Code repositories**: [GitHub](https://github.com/KeironO) (@KeironO) | [Personal Git](https://git.keiron.xyz) (keo7) - mostly half-finished projects and commit messages written at 2am
 - **Photography**: [Flickr](https://www.flickr.com/photos/163253992@N05/) - proof that Wales is prettier than my code
-- **Academic stuff**: [Google Scholar](https://scholar.google.com/citations?user=YOUR_ID) - for the three people who might cite my work
 
 Feel free to get in touch if you want to discuss technology, complain about software, or just need someone who understands why your Python environment is broken again.
