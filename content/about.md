@@ -5,7 +5,6 @@ date = "2025-09-25"
 
 <div style="float: right; margin: 0 0 1em 1em; text-align: center; width: 200px;">
 <img src="/images/keiron-profile.png" alt="Me with COVID in 2023" width="200" height="200" style="display: block;" />
-<em>Me with COVID in 2023</em>
 </div>
 
 Hi, I'm Keiron! I'm a data scientist working in healthcare at Cwm Taf Morgannwg University Health Board, where I spend most of my time convincing Excel to behave and wondering why anyone thought I was qualified for this. I'm also a passionate advocate for Free and Open Source Software - mostly because I'm too cheap to pay for licenses and too stubborn to admit when proprietary software works better.

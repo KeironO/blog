@@ -13,8 +13,9 @@ languageCode = "en-GB"
 defaultContentLanguage = "en"
 
 # SEO Settings
-paginate = 10
-paginatePath = "page"
+[pagination]
+  pagerSize = 10
+  path = "page"
 rssLimit = 20
 summaryLength = 70
 enableEmoji = false
@@ -76,11 +77,11 @@ enableRobotsTXT = true
     urls = ['.*']
 
 # Enable taxonomies for tags
-# disableKinds = ["taxonomy"]
-# ignoreErrors = ["error-disable-taxonomy"]
+[taxonomies]
+  tag = "tags"
 [permalinks]
   blog = "/:year/:month/:slug/"
-  tags = "/blog/:slug"
+  tags = "/tags/:slug/"
 
 [menu]
   [[menu.main]]
