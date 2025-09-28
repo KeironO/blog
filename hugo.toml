@@ -43,6 +43,10 @@ enableRobotsTXT = true
   keepQuotes = false
   keepWhitespace = false
 
+[minify.tdewolff.js]
+  keepVarNames = true
+  precision = 0
+
 # Privacy settings
 [privacy]
   [privacy.disqus]
