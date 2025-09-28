@@ -33,7 +33,7 @@ enableRobotsTXT = true
   disableXML = false
   disableHTML = false
   disableCSS = false
-  disableJS = false
+  disableJS = true
   minifyOutput = true
 
 [minify.tdewolff.html]
