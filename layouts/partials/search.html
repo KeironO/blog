@@ -1,0 +1,217 @@
+<!-- Search functionality -->
+<div id="search-container" style="margin: 20px 0;">
+    <input type="text" id="search-input" placeholder="Search posts..." style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+    <div id="search-results" style="margin-top: 10px;"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+    let fuse = null;
+
+    // Try multiple possible locations for the index.json
+    const possibleURLs = [
+        '/index.json',
+        window.location.origin + '/index.json',
+        window.location.protocol + '//' + window.location.host + '/index.json'
+    ];
+
+    console.log('Trying search index URLs:', possibleURLs);
+
+    // Try to fetch search index from multiple URLs
+    async function loadSearchIndex() {
+        for (const url of possibleURLs) {
+            try {
+                console.log('Trying:', url);
+                const response = await fetch(url);
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log('Search index loaded from:', url, '- Posts:', data.length);
+
+                    fuse = new Fuse(data, {
+                        keys: [
+                            { name: 'title', weight: 0.7 },
+                            { name: 'content', weight: 0.2 },
+                            { name: 'tags', weight: 0.1 }
+                        ],
+                        threshold: 0.4,
+                        includeScore: true,
+                        includeMatches: true,
+                        minMatchCharLength: 2,
+                        findAllMatches: true
+                    });
+
+                    searchInput.addEventListener('input', function() {
+                        const query = this.value.trim();
+                        if (query.length < 2) {
+                            searchResults.innerHTML = '';
+                            return;
+                        }
+
+                        const results = fuse.search(query);
+                        displayResults(results);
+                    });
+                    return; // Success, exit loop
+                }
+            } catch (error) {
+                console.log('Failed to load from:', url, error.message);
+            }
+        }
+
+        // If all URLs failed
+        console.error('Could not load search index from any URL');
+        searchResults.innerHTML = '<p>Search index not found. Please rebuild the site.</p>';
+    }
+
+    loadSearchIndex();
+
+    function highlightMatches(text, indices) {
+        if (!indices || indices.length === 0) return text;
+
+        let result = '';
+        let lastIndex = 0;
+
+        // Sort indices by start position
+        indices.sort((a, b) => a[0] - b[0]);
+
+        for (const [start, end] of indices) {
+            // Add text before match
+            result += text.substring(lastIndex, start);
+            // Add highlighted match
+            result += `<mark style="background-color: #ffeb3b; padding: 1px 2px;">${text.substring(start, end + 1)}</mark>`;
+            lastIndex = end + 1;
+        }
+
+        // Add remaining text
+        result += text.substring(lastIndex);
+        return result;
+    }
+
+    function getMatchedSentence(content, matches) {
+        if (!matches || matches.length === 0) {
+            // Return first sentence if no matches
+            const firstSentence = content.match(/[^.!?]*[.!?]/);
+            return firstSentence ? firstSentence[0].trim() : content.substring(0, 150) + '...';
+        }
+
+        // Find the sentence containing the first match
+        const firstMatch = matches[0];
+        const matchStart = firstMatch.indices[0][0];
+
+        // Split content into sentences
+        const sentences = content.split(/(?<=[.!?])\s+/);
+        let charCount = 0;
+
+        for (const sentence of sentences) {
+            const sentenceStart = charCount;
+            const sentenceEnd = charCount + sentence.length;
+
+            // Check if the match is within this sentence
+            if (matchStart >= sentenceStart && matchStart <= sentenceEnd) {
+                // Adjust match indices for this sentence
+                const adjustedIndices = firstMatch.indices
+                    .map(([start, end]) => [start - sentenceStart, end - sentenceStart])
+                    .filter(([start, end]) => start >= 0 && start < sentence.length);
+
+                return highlightMatches(sentence.trim(), adjustedIndices);
+            }
+
+            charCount = sentenceEnd + 1; // +1 for the space
+        }
+
+        // Fallback: return first sentence if no matching sentence found
+        return sentences[0] ? sentences[0].trim() : content.substring(0, 150) + '...';
+    }
+
+    function getFirstSentence(content) {
+        const firstSentence = content.match(/[^.!?]*[.!?]/);
+        return firstSentence ? firstSentence[0].trim() : content.substring(0, 150) + '...';
+    }
+
+    function displayResults(results) {
+        if (results.length === 0) {
+            searchResults.innerHTML = '<p>No results found.</p>';
+            return;
+        }
+
+        const html = results.slice(0, 5).map(result => {
+            const item = result.item;
+            const matches = result.matches || [];
+
+            // Get matches by field
+            const titleMatches = matches.filter(m => m.key === 'title');
+            const contentMatches = matches.filter(m => m.key === 'content');
+            const tagMatches = matches.filter(m => m.key === 'tags');
+
+            // Highlight title if matched
+            let displayTitle = item.title;
+            if (titleMatches.length > 0) {
+                displayTitle = highlightMatches(item.title, titleMatches[0].indices);
+            }
+
+            // Determine what to show based on match type
+            let displayContent = '';
+            if (contentMatches.length > 0) {
+                // Show the sentence containing the match
+                displayContent = getMatchedSentence(item.content, contentMatches);
+            } else {
+                // If match was in title or tags, show first sentence
+                displayContent = getFirstSentence(item.content);
+            }
+
+            // Highlight tags if matched
+            let displayTags = '';
+            if (item.tags && item.tags.length > 0) {
+                if (tagMatches.length > 0) {
+                    displayTags = item.tags.map(tag => {
+                        const tagMatch = tagMatches.find(m => m.value === tag);
+                        if (tagMatch) {
+                            return highlightMatches(tag, tagMatch.indices);
+                        }
+                        return tag;
+                    }).join(', ');
+                } else {
+                    displayTags = item.tags.join(', ');
+                }
+            }
+
+            return `
+                <div style="
+                    background: #fff1e6;
+                    border: 3px solid #000;
+                    padding: 20px;
+                    margin-bottom: 16px;
+                    transition: background-color 0.2s ease;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 20px;
+                " onmouseover="this.style.backgroundColor='#ffede0'" onmouseout="this.style.backgroundColor='#fff1e6'" onclick="window.location.href='${item.permalink}'">
+                    <div style="
+                        flex-shrink: 0;
+                        font-size: 0.85em;
+                        color: #666;
+                        font-weight: 500;
+                        min-width: 100px;
+                    ">
+                        ${item.date}
+                    </div>
+                    <div style="flex: 1;">
+                        <h4 style="margin: 0 0 10px 0; font-size: 1.2em; font-weight: bold;">
+                            <span style="color: #000;">${displayTitle}</span>
+                        </h4>
+                        <p style="margin: 0; color: #333; line-height: 1.5; font-size: 0.95em;">
+                            ${displayContent}
+                        </p>
+                        ${displayTags ? `<div style="margin-top: 8px; font-size: 0.85em; color: #666; font-weight: 500;"><span>#${displayTags.replace(/,\s*/g, ' #')}</span></div>` : ''}
+                    </div>
+                </div>
+            `;
+        }).join('');
+
+        searchResults.innerHTML = html;
+    }
+});
+</script>

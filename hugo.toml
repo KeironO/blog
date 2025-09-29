@@ -97,6 +97,10 @@ enableRobotsTXT = true
     url = "/reading/"
     weight = 25
   [[menu.main]]
+    name = "Search"
+    url = "/search/"
+    weight = 27
+  [[menu.main]]
     name = "RSS"
     url = "/blog/index.xml"
     weight = 30
@@ -173,3 +177,22 @@ enableRobotsTXT = true
   anchor = "Smart"
   bgColor = "#ffffff"
   hint = "photo"
+
+# Enable asset compression
+[mediaTypes]
+  [mediaTypes."application/gzip"]
+    suffixes = ["gz"]
+
+[outputFormats]
+  [outputFormats.gzip]
+    mediaType = "application/gzip"
+    isPlainText = false
+    isHTML = false
+
+# Asset processing and compression
+[build]
+  writeStats = true
+
+# Output formats for search
+[outputs]
+  home = ["HTML", "RSS", "JSON"]

@@ -1,27 +1,61 @@
 {{ define "main" }}
 {{ .Content }}
 
-<ul class="blog-posts">
+<div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 30px;">
   {{ range first 3 (where .Site.RegularPages "Section" "blog") }}
-  <li>
-    <span>
-      <i>
-        <time datetime='{{ .Date.Format "2006-01-02" }}'>
-          {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
-        </time>
-      </i>
-    </span>
-    <div>
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
-      {{ if .Description }}
-      <p class="post-description">{{ .Description }}</p>
+  {{ $firstSentence := "" }}
+  {{ if .Description }}
+    {{ $firstSentence = .Description }}
+  {{ else if .Summary }}
+    {{ $firstSentence = .Summary }}
+  {{ else }}
+    {{ $content := .Plain }}
+    {{ $sentence := findRE `[^.!?]*[.!?]` $content 1 }}
+    {{ if $sentence }}
+      {{ $firstSentence = index $sentence 0 }}
+    {{ else }}
+      {{ $firstSentence = truncate 150 $content }}
+    {{ end }}
+  {{ end }}
+
+  <div style="
+      background: #fff1e6;
+      border: 3px solid #000;
+      padding: 20px;
+      transition: background-color 0.2s ease;
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+  " onmouseover="this.style.backgroundColor='#ffede0'" onmouseout="this.style.backgroundColor='#fff1e6'" onclick="window.location.href='{{ .Permalink }}'">
+    <div style="
+        flex-shrink: 0;
+        font-size: 0.85em;
+        color: #666;
+        font-weight: 500;
+        min-width: 100px;
+    ">
+      {{ .Date.Format "02 Jan, 2006" }}
+    </div>
+    <div style="flex: 1;">
+      <h4 style="margin: 0 0 10px 0; font-size: 1.2em; font-weight: bold;">
+        <span style="color: #000;">{{ .Title }}</span>
+      </h4>
+      <p style="margin: 0; color: #333; line-height: 1.5; font-size: 0.95em;">
+        {{ $firstSentence | plainify | truncate 200 }}
+      </p>
+      {{ if .Params.tags }}
+        {{ $tags := delimit .Params.tags " #" }}
+        <div style="margin-top: 8px; font-size: 0.85em; color: #666; font-weight: 500;">
+          <span>#{{ $tags }}</span>
+        </div>
       {{ end }}
     </div>
-  </li>
+  </div>
   {{ else }}
-  <li>No blog posts found</li>
+  <p>No blog posts found</p>
   {{ end }}
-</ul>
+</div>
 
 <small>
   <a href="{{ "blog" | relURL }}">View all posts →</a>
