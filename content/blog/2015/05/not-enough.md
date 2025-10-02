@@ -1,6 +1,5 @@
 +++
 title = "Election Outcome: Not Enough"
-description = "Taken from my tumblr"
 date = "2015-05-14"
 tags = ["politics", "labour", "election", "austerity"]
 +++

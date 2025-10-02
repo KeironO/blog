@@ -7,7 +7,7 @@ date = "2025-09-25"
 <img src="/images/keiron-profile.png" alt="Me with COVID in 2023" width="200" height="200" style="display: block;" />
 </div>
 
-Hi, I'm Keiron! I'm a data scientist working in healthcare at Cwm Taf Morgannwg University Health Board, where I spend most of my time convincing Excel to behave and wondering why anyone thought I was qualified for this. I'm also a passionate advocate for Free and Open Source Software - mostly because I'm too cheap to pay for licenses and too stubborn to admit when proprietary software works better.
+Hi, I'm Keiron! I'm a data scientist working in healthcare at Cwm Taf Morgannwg University Health Board, where I spend most of my time wrangling data and wondering why anyone thought I was qualified for this. I'm also a passionate advocate for Free and Open Source Software - mostly because I'm too cheap to pay for licenses and too stubborn to admit when proprietary software works better.
 
 I have strong opinions about technology serving people rather than profit, though I'm probably just bitter about never getting rich from cryptocurrency. My work sits at the intersection of healthcare technology, questionable life choices, and an alarming amount of caffeine consumption.
 

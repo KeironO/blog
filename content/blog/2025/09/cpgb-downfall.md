@@ -2,7 +2,7 @@
 title = "The Downfall of the Communist Party of Great Britain"
 date = 2025-09-30
 draft = false
-description = "How the Communist Party of Great Britain dissolved itself in 1991, its assets ending up funding campaigns for proportional representation and constitutional reform"
+description = "From revolutionary party to PR campaigns: how British communism liquidated itself"
 tags = ['politics', 'labour', 'cpgb', 'eurocommunism', 'new-times', 'constitutional-reform', 'history']
 +++
 

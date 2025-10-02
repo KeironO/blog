@@ -1,7 +1,6 @@
 +++
 title = "Wash Your Hands"
 date = "2020-03-01"
-description = "Taken from my tumblr"
 tags = ["politics", "covid", "pandemic"]
 +++
 
