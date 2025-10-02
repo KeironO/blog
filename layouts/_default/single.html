@@ -47,7 +47,11 @@
   {{ if and (eq .Section "blog") (eq .Site.BaseURL "https://keiron.xyz") }}
   <div id="comments-section">
     <h2 style="margin-top: 2em; margin-bottom: 1em;">Reader Engagement Zone</h2>
-    <script defer src="https://cdn.commento.io/js/commento.js"></script>
+    <script defer
+      src="https://cdn.commento.io/js/commento.js"
+      data-css-override="{{ "/css/commento.css" | absURL }}"
+      data-no-fonts="true">
+    </script>
     <div id="commento"></div>
   </div>
   {{ end }}
