@@ -44,7 +44,14 @@
   {{ partial "social_sharing.html" . }}
   {{ partial "recommended_posts.html" . }}
   {{ end }}
-  
+
+  {{ if and (eq .Section "blog") (eq .Site.BaseURL "https://keiron.xyz") }}
+  <div id="comments-section">
+    <script defer src="https://cdn.commento.io/js/commento.js"></script>
+    <div id="commento"></div>
+  </div>
+  {{ end }}
+
   {{ if .Site.Params.enablePostNavigator }}
   {{ partial "post_navigator.html" . }}
   {{ end }}
