@@ -30,7 +30,7 @@ The reality is messier and less satisfying: Corbyn was a flawed politician leadi
 
 ## Individualism as Capitalist Ideology
 
-Here's the thing we don't talk about enough: hero-worship isn't just a tactical mistake, it's a capitalist mode of thinking that's infected left politics. <mark style="background-color: #fff3cd; padding: 2px 4px;">We live in a society</mark> that relentlessly promotes individualism - the idea that success comes from exceptional individuals, that history is made by great men (and it's usually men), that social change happens when the right leader appears. Of course we gravitate toward saviours and strongmen. Of course we look for someone to fix things from above. That's what capitalism trains us to do.
+Here's the thing we don't talk about enough: hero-worship isn't just a tactical mistake, it's a capitalist mode of thinking that's infected left politics. We live in a society that relentlessly promotes individualism - the idea that success comes from exceptional individuals, that history is made by great men (and it's usually men), that social change happens when the right leader appears. Of course we gravitate toward saviours and strongmen. Of course we look for someone to fix things from above. That's what capitalism trains us to do.
 
 The far right has mastered this logic. Trump, Farage, Orbán - they present themselves as strongmen who will save disempowered people from malevolent elites. The narrative is always the same: you are powerless, they are strong, follow them and they will deliver you. It's feudalism with better marketing.
 

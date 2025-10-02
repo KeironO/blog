@@ -86,4 +86,126 @@
   {{ partial "post_navigator.html" . }}
   {{ end }}
 </content>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const truisms = [
+    'we live in a society',
+    'it is what it is',
+    'at the end of the day',
+    'thoughts and prayers',
+    'solidarity forever',
+    'another world is possible',
+    'no war but class war',
+    'workers of the world unite',
+    'the personal is political',
+    'no ethical consumption under capitalism',
+    'read theory',
+    'late stage capitalism',
+    'seize the means of production',
+    'false consciousness',
+    'educate, agitate, organize',
+    'educate, agitate, organise',
+    'from each according to their ability',
+    'the means of production',
+    'material conditions',
+    'revolutionary praxis',
+    'bourgeois democracy',
+    'for the many not the few',
+    'nationalise the railways',
+    'nationalise the utilities',
+    'democratic socialism',
+    'trade union movement',
+    'working class solidarity',
+    'general strike',
+    'broad church',
+    'clause four',
+    'public ownership',
+    'common ownership',
+    'mixed economy',
+    'welfare state',
+    'social safety net',
+    'austerity kills',
+    'tory cuts',
+    'managed decline',
+    'red wall',
+    'left behind communities',
+    'levelling up',
+    'race to the bottom',
+    'collective bargaining',
+    'right to buy',
+    'council housing',
+    'social housing',
+    'privatisation',
+    'neoliberalism',
+    'third way',
+    'blairism',
+    'triangulation',
+    'electability',
+    'electable',
+    'unelectable',
+    'social justice',
+    'economic justice',
+    'wealth redistribution',
+    'progressive taxation',
+    'public services',
+    'save our nhs',
+    'defend the nhs',
+    'winter of discontent',
+    'miners strike',
+    'picket line',
+    'bedroom tax',
+    'universal credit',
+    'zero hours contracts',
+    'precarious work',
+    'gig economy',
+    'living wage',
+    'real living wage'
+  ].sort((a, b) => b.length - a.length); // Sort by length, longest first
+
+  const postContent = document.querySelector('.post-wrapper');
+  if (!postContent) return;
+
+  const walker = document.createTreeWalker(
+    postContent,
+    NodeFilter.SHOW_TEXT,
+    {
+      acceptNode: function(node) {
+        // Skip if parent is already a mark tag or is a script/style
+        if (node.parentElement.tagName === 'MARK' ||
+            node.parentElement.tagName === 'SCRIPT' ||
+            node.parentElement.tagName === 'STYLE') {
+          return NodeFilter.FILTER_REJECT;
+        }
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    }
+  );
+
+  const textNodes = [];
+  while (walker.nextNode()) {
+    textNodes.push(walker.currentNode);
+  }
+
+  textNodes.forEach(node => {
+    let text = node.textContent;
+    let modified = false;
+    let newHTML = text;
+
+    truisms.forEach(truism => {
+      const regex = new RegExp(`(${truism})`, 'gi');
+      if (regex.test(newHTML)) {
+        newHTML = newHTML.replace(regex, '<mark style="background-color: #fff3cd; padding: 2px 4px;">$1</mark>');
+        modified = true;
+      }
+    });
+
+    if (modified) {
+      const span = document.createElement('span');
+      span.innerHTML = newHTML;
+      node.parentNode.replaceChild(span, node);
+    }
+  });
+});
+</script>
 {{ end }}
