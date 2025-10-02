@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     truisms.forEach(truism => {
       const escapedTruism = truism.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-      const regex = new RegExp(`\\b(${escapedTruism})\\b`, 'gi');
+      const regex = new RegExp(`\\b(${escapedTruism}\\w*)`, 'gi');
       if (regex.test(newHTML)) {
         newHTML = newHTML.replace(regex, '<mark style="background-color: #fff3cd; padding: 2px 4px;">$1</mark>');
         modified = true;
