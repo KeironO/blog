@@ -2,6 +2,7 @@
   "htmlElements": {
     "tags": [
       "a",
+      "blockquote",
       "body",
       "br",
       "button",
@@ -24,6 +25,7 @@
       "li",
       "link",
       "main",
+      "mark",
       "meta",
       "nav",
       "noscript",
@@ -116,7 +118,9 @@
       "i-preamble",
       "ii-the-interoperable-commonwealth",
       "iii-liberation-through-open-source",
+      "individualism-as-capitalist-ideology",
       "iv-the-common-good-of-the-nhs",
+      "leaders-without-heroes",
       "looking-back",
       "media-interest",
       "meeting-the-vc",
@@ -147,6 +151,7 @@
       "the-numbers-dont-lie",
       "the-phone-call",
       "the-predictable-results",
+      "the-problem-with-saviours",
       "the-reckoning",
       "the-sleepless-nights",
       "the-socialist-response",
@@ -155,6 +160,8 @@
       "v-a-call-to-action",
       "what-actually-happens",
       "what-changed-everything",
+      "what-grassroots-actually-means",
+      "what-happens-next",
       "what-the-act-actually-does",
       "what-this-means-for-the-left",
       "what-we-lose"
