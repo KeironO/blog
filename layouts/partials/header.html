@@ -1,0 +1,28 @@
+<a href="{{ "" | relURL }}" class="title">
+  <h2 class="site-title-box">{{ .Site.Title }}</h2>
+</a>
+<nav>{{- partial "nav.html" . -}}</nav>
+
+<style>
+.site-title-box {
+  background-color: #000;
+  color: #fff !important;
+  padding: 8px 12px;
+  display: inline-block;
+}
+
+.title:hover .site-title-box {
+  background-color: #222;
+}
+
+@media (prefers-color-scheme: dark) {
+  .site-title-box {
+    background-color: #fff;
+    color: #000 !important;
+  }
+
+  .title:hover .site-title-box {
+    background-color: #ddd;
+  }
+}
+</style>

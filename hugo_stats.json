@@ -60,6 +60,7 @@
       "post-meta",
       "post-subtitle",
       "post-tags",
+      "post-title-box",
       "post-wrapper",
       "reading-time",
       "rec-card",
@@ -67,6 +68,7 @@
       "scroll-to-top",
       "share-button",
       "sharing-buttons",
+      "site-title-box",
       "social-sharing",
       "subtitle-container",
       "subtitle-rule",
@@ -75,7 +77,8 @@
       "title",
       "toc",
       "toc-container",
-      "toc-sidebar"
+      "toc-sidebar",
+      "toc-title-box"
     ],
     "ids": [
       "2025",
