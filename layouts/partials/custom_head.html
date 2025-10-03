@@ -31,7 +31,7 @@
   --link-color: #0969da !important;
   --visited-color: #8b6fcb !important;
   --blockquote-color: #21252b !important;
-  --width: 740px !important;
+  --width: 900px !important;
   --font-scale: 1.3em !important;
 }
 
@@ -73,13 +73,9 @@ main {
 }
 
 
-body:has(.toc-sidebar) {
-  padding-right: 320px !important;
-}
-
 .toc-sidebar {
   position: fixed !important;
-  right: 2em !important;
+  right: calc((100vw - var(--width)) / 2 - 280px) !important;
   top: 2em !important;
   width: 250px !important;
   max-height: calc(100vh - 4em) !important;
@@ -202,6 +198,21 @@ img, iframe, video {
   border-radius: 0 !important;
   padding: 0 !important;
   font-size: inherit !important;
+}
+
+.toc-container.collapsed .toc {
+  display: none !important;
+}
+
+.toc-container.collapsed .toc-toggle {
+  transform: rotate(0deg) !important;
+}
+
+.toc-toggle {
+  display: inline-block !important;
+  transform: rotate(90deg) !important;
+  transition: transform 0.2s !important;
+  font-size: 0.7em !important;
 }
 
 .toc-container h4 {

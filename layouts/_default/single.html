@@ -28,8 +28,10 @@
     {{ $toc := .TableOfContents }}
     {{ if and $toc (not (eq $toc "<nav id=\"TableOfContents\"></nav>")) (eq .Section "blog") }}
     <div class="toc-sidebar">
-      <div class="toc-container">
-        <h4>Table of Contents</h4>
+      <div class="toc-container collapsed">
+        <h4 onclick="this.parentElement.classList.toggle('collapsed')" style="cursor: pointer; user-select: none;">
+          <span class="toc-toggle">▶</span> Table of Contents
+        </h4>
         <div class="toc">
           {{ $toc }}
         </div>

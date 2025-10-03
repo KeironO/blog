@@ -51,6 +51,7 @@
       "blog-posts",
       "card-date",
       "card-date-mobile",
+      "collapsed",
       "footnote-backref",
       "footnote-ref",
       "footnotes",
@@ -80,7 +81,8 @@
       "title",
       "toc",
       "toc-container",
-      "toc-sidebar"
+      "toc-sidebar",
+      "toc-toggle"
     ],
     "ids": [
       "2025",
