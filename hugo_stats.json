@@ -53,6 +53,7 @@
       "card-date",
       "card-date-mobile",
       "collapsed",
+      "copy-url",
       "footnote-backref",
       "footnote-ref",
       "footnotes",
@@ -75,6 +76,7 @@
       "sidebar",
       "site-title",
       "social-sharing",
+      "subscribe-button",
       "subtitle-container",
       "subtitle-rule",
       "tag",
@@ -122,7 +124,9 @@
       "fnref:7",
       "fnref:8",
       "fnref:9",
+      "for-rss-purists",
       "from-ceredigion-to-the-country",
+      "how-to-subscribe",
       "i-preamble",
       "ii-the-interoperable-commonwealth",
       "iii-liberation-through-open-source",
@@ -134,11 +138,14 @@
       "meeting-the-vc",
       "mourning-whats-gone",
       "postscript-the-road-ahead",
+      "privacy",
+      "questions",
       "scrollToTop",
       "search-container",
       "search-input",
       "search-results",
       "seizing-the-moment",
+      "support-this-blog",
       "temples-ascent",
       "the-afterlife-of-assets",
       "the-anticlimax",
@@ -171,7 +178,10 @@
       "what-happens-next",
       "what-the-act-actually-does",
       "what-this-means-for-the-left",
-      "what-we-lose"
+      "what-we-lose",
+      "what-youll-get",
+      "why-not-substack",
+      "why-rss-to-email"
     ]
   }
 }
