@@ -7,10 +7,10 @@
       </p>
     </div>
     <div style="display: flex; gap: 1em;">
-      <a href="/blog/index.xml" style="color: var(--link-color); text-decoration: none;">RSS</a>
       <a href="/search/" style="color: var(--link-color); text-decoration: none;">Search</a>
       <a href="#" id="flip-button" style="color: var(--link-color); text-decoration: none;" onclick="flipPage(event)">Flip page 180°</a>
       <a href="#" id="askew-button" style="color: var(--link-color); text-decoration: none;" onclick="makeAskew(event)">Make text askew</a>
+      <a href="#" id="caps-button" style="color: var(--link-color); text-decoration: none;" onclick="capsMode(event)">Shout at me</a>
     </div>
   </div>
   {{ if not (.Param "hideMadeWithLine") }}
@@ -23,6 +23,7 @@
 <script>
 let isFlipped = false;
 let isAskew = false;
+let isCaps = false;
 
 function flipPage(event) {
   event.preventDefault();
@@ -68,6 +69,21 @@ function makeAskew(event) {
     });
 
     button.textContent = 'Make text askew';
+  }
+}
+
+function capsMode(event) {
+  event.preventDefault();
+  const button = document.getElementById('caps-button');
+
+  isCaps = !isCaps;
+
+  if (isCaps) {
+    document.body.style.textTransform = 'uppercase';
+    button.textContent = 'WHY ARE WE SHOUTING';
+  } else {
+    document.body.style.textTransform = 'none';
+    button.textContent = 'Shout at me';
   }
 }
 </script>
