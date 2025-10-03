@@ -1,6 +1,6 @@
 +++
 title = "Subscribe via Email"
-date = "2025-10-03"
+type = "page"
 +++
 
 I don't use a traditional email newsletter service. Instead, this blog offers an RSS feed that you can convert to email updates using a free RSS-to-email service.
