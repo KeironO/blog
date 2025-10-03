@@ -7,15 +7,9 @@ date = "2025-09-25"
 <img src="/images/keiron-profile.png" alt="Me with COVID in 2023" width="200" height="200" style="display: block;" />
 </div>
 
-Hi, I'm Keiron! I'm a data scientist working in healthcare at Cwm Taf Morgannwg University Health Board, where I spend most of my time wrangling data and wondering why anyone thought I was qualified for this. I'm also a passionate advocate for Free and Open Source Software - mostly because I'm too cheap to pay for licenses and too stubborn to admit when proprietary software works better.
+Hi, I'm Keiron. I'm a data scientist working in healthcare at Cwm Taf Morgannwg University Health Board in Wales. I'm passionate about Free and Open Source Software and have strong opinions about technology serving people rather than profit.
 
-I have strong opinions about technology serving people rather than profit, though I'm probably just bitter about never getting rich from cryptocurrency. My work sits at the intersection of healthcare technology, questionable life choices, and an alarming amount of caffeine consumption.
-
-This blog is where I pretend to have insights about technology whilst mostly just complaining about things. You'll find rants about Python packaging (I love to hate it), skeptical takes on whatever tech hype is currently making venture capitalists excited, and the occasional attempt to write something useful about health informatics before getting distracted by politics.
-
-I write about software development with the confidence of someone who's broken production systems multiple times, offer hot takes on technology trends I barely understand, and sometimes share thoughts about Welsh politics and the NHS. There's probably too much complaining about various things, but at least I'm consistent.
-
-I'm interested in how technology can actually help people instead of just making everything worse, though I'm increasingly convinced that most of my job involves moving data from one broken system to another slightly different broken system whilst pretending this constitutes "digital transformation."
+I write about technology, politics, healthcare, and the intersection of digital rights and social democracy. You'll find skeptical takes on tech hype, thoughts on health informatics, and occasional rants about Python packaging and Welsh politics.
 
 ## Connect with me
 
