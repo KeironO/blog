@@ -63,91 +63,237 @@
   {{ end }}
 </content>
 
+<style>
+.truism-tooltip {
+  position: absolute;
+  background: #000;
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  line-height: 1.4;
+  max-width: 300px;
+  z-index: 1000;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.truism-tooltip.visible {
+  opacity: 1;
+}
+
+.truism-tooltip::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 20px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #000;
+}
+
+mark.truism {
+  background-color: #fff3cd;
+  padding: 2px 4px;
+  cursor: help;
+  transition: background-color 0.2s;
+}
+
+mark.truism:hover {
+  background-color: #ffe69c;
+}
+</style>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  const truisms = [
-    'we live in a society',
-    'it is what it is',
-    'at the end of the day',
-    'thoughts and prayers',
-    'solidarity forever',
-    'another world is possible',
-    'no war but class war',
-    'workers of the world unite',
-    'the personal is political',
-    'no ethical consumption under capitalism',
-    'read theory',
-    'late stage capitalism',
-    'seize the means of production',
-    'false consciousness',
-    'educate, agitate, organize',
-    'educate, agitate, organise',
-    'from each according to their ability',
-    'the means of production',
-    'material conditions',
-    'revolutionary praxis',
-    'bourgeois democracy',
-    'for the many not the few',
-    'nationalise the railways',
-    'nationalise the utilities',
-    'democratic socialism',
-    'trade union movement',
-    'working class solidarity',
-    'general strike',
-    'broad church',
-    'clause four',
-    'public ownership',
-    'common ownership',
-    'mixed economy',
-    'welfare state',
-    'social safety net',
-    'austerity kills',
-    'tory cuts',
-    'managed decline',
-    'red wall',
-    'left behind communities',
-    'levelling up',
-    'race to the bottom',
-    'collective bargaining',
-    'right to buy',
-    'council housing',
-    'social housing',
-    'privatisation',
-    'neoliberalism',
-    'third way',
-    'blairism',
-    'triangulation',
-    'electability',
-    'electable',
-    'unelectable',
-    'social justice',
-    'economic justice',
-    'wealth redistribution',
-    'progressive taxation',
-    'public services',
-    'save our nhs',
-    'defend the nhs',
-    'winter of discontent',
-    'miners strike',
-    'picket line',
-    'bedroom tax',
-    'universal credit',
-    'zero hours contracts',
-    'precarious work',
-    'gig economy',
-    'living wage',
-    'real living wage'
-  ].sort((a, b) => b.length - a.length); // Sort by length, longest first
+  const truismDefinitions = {
+    'we live in a society': 'A joke phrase pointing out how society affects what we do',
+    'it is what it is': 'Saying there\'s nothing we can do about a situation',
+    'at the end of the day': 'When you think about what really matters',
+    'thoughts and prayers': 'Saying you care without actually doing anything to help',
+    'solidarity forever': 'Workers sticking together no matter what',
+    'another world is possible': 'Belief that we can build a better, fairer society',
+    'no war but class war': 'The real fight is between rich and poor, not between countries',
+    'workers of the world unite': 'Workers in all countries should join together',
+    'the personal is political': 'Problems in your personal life are often caused by political systems',
+    'no ethical consumption under capitalism': 'You can\'t shop your way to a fair world',
+    'read theory': 'Read books about socialism and politics',
+    'late stage capitalism': 'Capitalism near breaking point or collapse',
+    'seize the means of production': 'Workers taking over the factories and workplaces',
+    'false consciousness': 'When working people believe ideas that hurt them',
+    'educate, agitate, organize': 'Teach people, get them angry, then build power together',
+    'educate, agitate, organise': 'Teach people, get them angry, then build power together',
+    'from each according to their ability': 'Everyone works as much as they can and gets what they need',
+    'the means of production': 'The factories, tools, and machines that make things',
+    'material conditions': 'The real-world stuff like money, jobs, and housing that affect your life',
+    'revolutionary praxis': 'Putting political ideas into action to change society',
+    'bourgeois democracy': 'Democracy that mostly serves rich people',
+    'for the many not the few': 'Politics that helps everyone, not just the wealthy',
+    'nationalise the railways': 'Government takes over the trains instead of private companies running them',
+    'nationalise the utilities': 'Government takes over gas, water, electricity companies',
+    'democratic socialism': 'Building socialism by winning elections, not through revolution',
+    'trade union movement': 'Workers organising together to fight for better pay and conditions',
+    'working class solidarity': 'Workers sticking together to fight for common goals',
+    'general strike': 'When workers in every industry stop work at the same time',
+    'broad church': 'A political party with lots of different views inside it',
+    'clause four': 'Labour\'s old promise to put industries in public hands (Blair got rid of it)',
+    'public ownership': 'When the government owns things like railways or utilities',
+    'common ownership': 'When everyone shares ownership of something',
+    'mixed economy': 'Some things owned privately, some owned by the government',
+    'welfare state': 'Government providing healthcare, benefits, and support for everyone',
+    'social safety net': 'Government help to stop people falling into poverty',
+    'austerity kills': 'Cutting public spending leads to people dying',
+    'tory cuts': 'Conservative government cutting money for hospitals, schools, benefits',
+    'managed decline': 'Letting things slowly get worse instead of fixing them',
+    'red wall': 'Northern England seats that always voted Labour but switched to Tory in 2019',
+    'left behind communities': 'Towns and cities forgotten when factories closed',
+    'levelling up': 'Conservative promise to invest in poor areas (mostly didn\'t happen)',
+    'race to the bottom': 'Countries or companies competing to pay the lowest wages',
+    'collective bargaining': 'Workers negotiating as a group instead of individually',
+    'right to buy': 'Thatcher let council tenants buy their homes cheap',
+    'council housing': 'Homes owned by the local council and rented cheaply',
+    'social housing': 'Affordable homes for people who can\'t afford market rent',
+    'privatisation': 'Selling off public services to private companies',
+    'neoliberalism': 'Political idea that free markets should run everything',
+    'third way': 'Blair\'s attempt to mix left-wing and right-wing ideas',
+    'blairism': 'New Labour accepting capitalism whilst trying to soften it a bit',
+    'triangulation': 'Political tactic of nicking ideas from your opponents',
+    'electability': 'Whether the media and establishment reckon you can win',
+    'electable': 'What they call politicians who won\'t change things too much',
+    'unelectable': 'What they call left-wing politicians they don\'t like',
+    'social justice': 'Everyone getting a fair chance regardless of background',
+    'economic justice': 'Fair pay and fair share of wealth for everyone',
+    'wealth redistribution': 'Taking from the rich (through taxes) to help the poor',
+    'progressive taxation': 'The more you earn, the higher percentage you pay in tax',
+    'public services': 'Things like the NHS, schools, buses paid for by taxes',
+    'save our nhs': 'Campaign to protect the NHS from privatisation',
+    'defend the nhs': 'Stop the NHS being sold off or shut down',
+    'winter of discontent': '1978-79 strikes that people blamed Labour for',
+    'miners strike': 'Year-long strike in 1984-85 when Thatcher closed coal mines',
+    'picket line': 'Striking workers standing outside work to persuade others not to go in',
+    'bedroom tax': 'Cutting benefits if you have a "spare" bedroom',
+    'universal credit': 'Combined benefit system that leaves people waiting weeks for money',
+    'zero hours contracts': 'Jobs where you don\'t know how many hours you\'ll work each week',
+    'precarious work': 'Unstable jobs where you could be dropped any time',
+    'gig economy': 'Working lots of short-term jobs like Deliveroo instead of one steady job',
+    'living wage': 'Enough money per hour to actually live on',
+    'real living wage': 'What you actually need to live (higher than the government "living wage")',
+    'solidarity': 'Standing together with other people in their struggles',
+    'class struggle': 'The conflict between workers and bosses over power and resources',
+    'labour aristocracy': 'Better-off workers who side with bosses instead of other workers',
+    'reactionary': 'Someone who wants to go backwards to the old unfair ways',
+    'comrade': 'A fellow socialist or union member fighting alongside you',
+    'vanguard': 'The group of people leading a revolutionary movement',
+    'mutual aid': 'Communities helping each other out without waiting for the government',
+    'dual power': 'Building alternative institutions alongside or against the state',
+    'direct action': 'Taking action yourself rather than asking politicians nicely',
+    'rent seeking': 'Making money from owning things rather than actually doing work',
+    'financialisation': 'When the economy cares more about money markets than making real things',
+    'deindustrialisation': 'When all the factories close and manufacturing jobs disappear',
+    'precariat': 'People stuck in insecure, temporary work with no stability',
+    'wage theft': 'When bosses don\'t pay you what you\'re owed',
+    'surplus value': 'The profit bosses take from the work you do',
+    'exploitation': 'When someone else profits from your labour',
+    'alienation': 'Feeling disconnected from your work and what you produce',
+    'commodification': 'Turning everything into something you can buy and sell',
+    'gentrification': 'When rich people move in and price out the locals',
+    'social reproduction': 'All the unpaid work (like childcare) that keeps society going',
+    'solidarity economy': 'Economic activity based on cooperation not competition',
+    'cooperative': 'A business owned and run by the workers themselves',
+    'worker cooperative': 'A company where the workers own it together',
+    'democratic deficit': 'When people have no real say in decisions that affect them',
+    'austerity': 'Cutting public spending to make working people pay for capitalism\'s failures',
+    'fiscal prudence': 'Posh way of saying cuts to public services',
+    'market fundamentalism': 'Believing free markets are the answer to everything',
+    'trickle down economics': 'The lie that making rich people richer helps everyone',
+    'disaster capitalism': 'Using crises to privatise things and attack workers\' rights',
+    'accumulation by dispossession': 'Taking public resources and giving them to private companies',
+    'enclosure': 'Taking common land or resources away from everyone',
+    'commons': 'Resources that belong to everyone, not private owners',
+    'rentier capitalism': 'An economy built on extracting rent from assets not productive work',
+    'shareholder capitalism': 'Running companies only to enrich shareholders',
+    'stakeholder capitalism': 'The pretence that companies should serve everyone not just shareholders',
+    'corporate welfare': 'Government handouts to big companies and rich people',
+    'corporate socialism': 'Bailouts for banks and corporations whilst workers get austerity',
+    'socialise the losses': 'Making taxpayers pay for companies\' failures',
+    'privatise the profits': 'Letting companies keep all the money whilst risks are public',
+    'regulatory capture': 'When industries control the regulators meant to control them',
+    'lobbying': 'Big business paying to influence politicians',
+    'revolving door': 'Politicians and civil servants getting cushy corporate jobs',
+    'kleptocracy': 'Government by thieves who use power to steal public wealth',
+    'oligarchy': 'When a small group of rich people control everything',
+    'plutocracy': 'Government by and for the wealthy',
+    'meritocracy': 'The myth that success comes from talent not privilege',
+    'bootstrap mythology': 'The lie that anyone can succeed through hard work alone',
+    'just world fallacy': 'Believing people get what they deserve in life',
+    'moral hazard': 'When people take risks because someone else pays if it goes wrong',
+    'race to the top': 'Countries competing to have the best standards (rarely happens)',
+    'social murder': 'Killing people through policies that create poverty and neglect',
+    'care crisis': 'When there aren\'t enough people or money to look after those who need it',
+    'housing crisis': 'When ordinary people can\'t afford a decent place to live',
+    'cost of living crisis': 'When prices rise faster than wages and people struggle',
+    'energy crisis': 'When people can\'t afford to heat their homes',
+    'food poverty': 'Not having enough money to feed yourself properly',
+    'food banks': 'Charities giving free food to people who can\'t afford to eat',
+    'universal basic income': 'Everyone getting money from the state no matter what',
+    'universal basic services': 'Free public services for everyone like NHS but expanded',
+    'pay ratio': 'How much more bosses earn compared to their workers',
+    'wealth inequality': 'The massive gap between rich and poor',
+    'income inequality': 'The unfair difference in what people earn',
+    'regional inequality': 'When some parts of the country are much poorer than others',
+    'poverty premium': 'How being poor costs more (worse deals, higher prices)',
+    'in-work poverty': 'Having a job but still not earning enough to live',
+    'child poverty': 'Kids growing up without enough money for basics',
+    'relative poverty': 'Being poor compared to others in your society',
+    'absolute poverty': 'Not having enough for basic survival',
+    'poverty line': 'The official income level below which you\'re counted as poor',
+    'squeezed middle': 'People feeling the pinch despite being neither rich nor poor',
+    'precarious middle class': 'Middle class people one crisis away from poverty',
+    'downward mobility': 'Ending up poorer than your parents',
+    'upward mobility': 'Being able to move up from poverty (increasingly rare)',
+    'intergenerational inequality': 'Young people worse off than their parents\' generation',
+    'rentier class': 'People who live off owning property and assets',
+    'landlordism': 'Making money from owning homes that other people live in',
+    'buy to let': 'Buying houses to rent out for profit',
+    'section 21': 'No-fault eviction where landlords can kick you out for no reason',
+    'revenge eviction': 'Landlord evicting you for complaining about repairs',
+    'affordable housing': 'Housing that supposedly costs less (but often still too expensive)',
+    'social cleansing': 'Pushing poor people out of areas through housing policies',
+    'hostile architecture': 'Designing public spaces to keep homeless people away',
+    'welfare reform': 'Usually means cutting benefits and making life harder',
+    'sanctions': 'Stopping someone\'s benefits as punishment',
+    'means testing': 'Checking if you\'re poor enough to get help',
+    'conditionality': 'Making you jump through hoops to get benefits',
+    'deserving poor': 'The idea that only some poor people deserve help',
+    'undeserving poor': 'Blaming poor people for their poverty',
+    'scrounger narrative': 'The lie that people on benefits are lazy',
+    'strivers versus skivers': 'Dividing people into hard workers and benefit scroungers',
+    'poverty porn': 'TV shows that exploit and mock poor people',
+    'workfare': 'Making people work for free to get benefits',
+    'work capability assessment': 'Tests that wrongly declare disabled people fit to work',
+    'welfare state': 'Government providing healthcare, benefits, and support for everyone',
+    'nanny state': 'What right-wingers call it when government helps people'
+  };
+
+  const truisms = Object.keys(truismDefinitions).sort((a, b) => b.length - a.length);
 
   const postContent = document.querySelector('.post-wrapper');
   if (!postContent) return;
+
+  // Create tooltip element
+  const tooltip = document.createElement('div');
+  tooltip.className = 'truism-tooltip';
+  document.body.appendChild(tooltip);
 
   const walker = document.createTreeWalker(
     postContent,
     NodeFilter.SHOW_TEXT,
     {
       acceptNode: function(node) {
-        // Skip if parent is already a mark tag or is a script/style
         if (node.parentElement.tagName === 'MARK' ||
             node.parentElement.tagName === 'SCRIPT' ||
             node.parentElement.tagName === 'STYLE') {
@@ -172,7 +318,9 @@ document.addEventListener('DOMContentLoaded', function() {
       const escapedTruism = truism.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
       const regex = new RegExp(`\\b(${escapedTruism}\\w*)`, 'gi');
       if (regex.test(newHTML)) {
-        newHTML = newHTML.replace(regex, '<mark style="background-color: #fff3cd; padding: 2px 4px;">$1</mark>');
+        newHTML = newHTML.replace(regex, (match) => {
+          return `<mark class="truism" data-definition="${truismDefinitions[truism.toLowerCase()]}">${match}</mark>`;
+        });
         modified = true;
       }
     });
@@ -181,6 +329,27 @@ document.addEventListener('DOMContentLoaded', function() {
       const span = document.createElement('span');
       span.innerHTML = newHTML;
       node.parentNode.replaceChild(span, node);
+    }
+  });
+
+  // Add tooltip functionality
+  document.addEventListener('mouseover', function(e) {
+    if (e.target.classList.contains('truism')) {
+      const definition = e.target.dataset.definition;
+      if (definition) {
+        tooltip.textContent = definition;
+        tooltip.classList.add('visible');
+
+        const rect = e.target.getBoundingClientRect();
+        tooltip.style.left = rect.left + 'px';
+        tooltip.style.top = (rect.bottom + window.scrollY + 8) + 'px';
+      }
+    }
+  });
+
+  document.addEventListener('mouseout', function(e) {
+    if (e.target.classList.contains('truism')) {
+      tooltip.classList.remove('visible');
     }
   });
 });

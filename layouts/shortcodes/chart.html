@@ -1,0 +1,38 @@
+{{- $id := .Get "id" | default (printf "chart-%d" (now.Unix)) -}}
+{{- $type := .Get "type" | default "bar" -}}
+{{- $height := .Get "height" | default "400" -}}
+
+<div class="chart-container" style="position: relative; height:{{ $height }}px; margin: 2rem 0;">
+    <canvas id="{{ $id }}"></canvas>
+</div>
+
+<script>
+(function() {
+    // Wait for Chart.js to load
+    function initChart() {
+        if (typeof Chart === 'undefined') {
+            setTimeout(initChart, 100);
+            return;
+        }
+
+        const ctx = document.getElementById('{{ $id }}').getContext('2d');
+        const chartData = {{ .Inner | safeJS }};
+
+        new Chart(ctx, {
+            type: '{{ $type }}',
+            data: chartData.data,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                ...chartData.options
+            }
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initChart);
+    } else {
+        initChart();
+    }
+})();
+</script>
