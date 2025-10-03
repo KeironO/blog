@@ -1,28 +1,72 @@
-<a href="{{ "" | relURL }}" class="title">
-  <h2 class="site-title-box">{{ .Site.Title }}</h2>
-</a>
-<nav>{{- partial "nav.html" . -}}</nav>
-
 <style>
-.site-title-box {
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.site-title {
   background-color: #000;
-  color: #fff !important;
+  color: #fff;
   padding: 8px 12px;
+  display: inline-block;
+  margin: 0;
+  border: 3px solid #000;
+  transition: background-color 0.2s ease;
+}
+
+.title {
   display: inline-block;
 }
 
-.title:hover .site-title-box {
-  background-color: #222;
+.title:hover .site-title {
+  background-color: #fff;
+  color: #000;
 }
 
-@media (prefers-color-scheme: dark) {
-  .site-title-box {
-    background-color: #fff;
-    color: #000 !important;
+nav {
+  display: flex;
+  gap: 1em;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  color: var(--link-color);
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
   }
 
-  .title:hover .site-title-box {
-    background-color: #ddd;
+  nav {
+    flex-wrap: wrap;
+    gap: 0.5em;
+  }
+
+  nav a {
+    font-size: 0.9em;
+  }
+
+  .site-title {
+    font-size: 0.9em;
+    padding: 6px 10px;
   }
 }
 </style>
+
+<div class="header-container">
+  <a href="{{ "" | relURL }}" class="title">
+    <h2 class="site-title">{{ .Site.Title }}</h2>
+  </a>
+  <nav>{{- partial "nav.html" . -}}</nav>
+</div>
