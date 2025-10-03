@@ -3,7 +3,7 @@ title = "About"
 date = "2025-09-25"
 +++
 
-<div style="float: right; margin: 0 0 1em 1em; text-align: center; width: 200px;">
+<div class="about-profile-image" style="float: right; margin: 0 0 1em 1em; text-align: center; width: 200px;">
 <img src="/images/keiron-profile.png" alt="Me with COVID in 2023" width="200" height="200" style="display: block;" />
 </div>
 

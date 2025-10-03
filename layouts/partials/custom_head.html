@@ -47,7 +47,7 @@
 }
 
 body {
-  font-weight: 400 !important;
+  font-weight: 450 !important;
   letter-spacing: 0 !important;
 }
 
@@ -59,6 +59,14 @@ h1, h2, h3, h4, h5, h6 {
 .title h1 {
   font-size: 2.2em !important;
   font-weight: 700 !important;
+}
+
+a {
+  font-weight: 500 !important;
+}
+
+main a {
+  font-weight: 500 !important;
 }
 
 h1 { 
@@ -498,7 +506,7 @@ blockquote {
   body:has(.toc-sidebar) {
     padding-right: 20px !important;
   }
-  
+
   .toc-sidebar {
     position: relative !important;
     right: auto !important;
@@ -508,16 +516,21 @@ blockquote {
     max-height: none !important;
     margin-bottom: 2em !important;
   }
-  
+
   /* Smaller dropcap on mobile */
   .post-wrapper.blog-post > p:first-of-type::first-letter {
     font-size: 3em !important;
     margin-right: 6px !important;
     padding: 6px !important;
   }
-  
+
   .social-sharing {
     text-align: center !important;
+  }
+
+  /* Hide about page profile image on mobile */
+  .about-profile-image {
+    display: none !important;
   }
 }
 
