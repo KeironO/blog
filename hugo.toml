@@ -99,7 +99,7 @@ enableRobotsTXT = true
 
 [params]
   # The "description" of your website. This is used in the meta data of your generated html.
-  description = "Thoughts and musings from Keiron O'Shea"
+  description = "Thoughts and musings from Keiron O'Shea on technology, politics, healthcare, programming, digital rights, and social democracy. A blog covering data science, FOSS, political analysis, and the intersection of tech and society."
   
   # Default keywords for SEO
   keywords = "technology, programming, data science, healthcare, politics, FOSS, open source, social democracy, digital rights, privacy"
