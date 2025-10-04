@@ -24,57 +24,6 @@
 let isFlipped = false;
 let isAskew = false;
 let isCaps = false;
-let secretSequence = [];
-const unlockCode = ['flip', 'askew', 'caps'];
-let isUnlocked = false;
-
-function checkSecret(action) {
-  secretSequence.push(action);
-  if (secretSequence.length > 3) {
-    secretSequence.shift();
-  }
-
-  if (!isUnlocked && secretSequence.join(',') === unlockCode.join(',')) {
-    isUnlocked = true;
-
-    // Wait 5 seconds before showing
-    setTimeout(() => {
-      // Create dramatic announcement
-      const announcement = document.createElement('div');
-      announcement.style.cssText = 'position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.95);';
-
-      const text = document.createElement('div');
-      text.style.cssText = 'font-size: 5rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.2em; animation: spinFlash 2.5s ease-in-out;';
-      text.textContent = '⚠️ WELCOME TO BRAIN DUMP ⚠️';
-
-      const style = document.createElement('style');
-      style.textContent = `
-        @keyframes spinFlash {
-          0% { transform: rotate(180deg) scale(0); opacity: 0; color: #ff0000; }
-          10% { transform: rotate(160deg) scale(0.3); opacity: 1; color: #ff0000; }
-          20% { transform: rotate(140deg) scale(0.5); opacity: 0.5; color: #00ff00; }
-          30% { transform: rotate(120deg) scale(0.7); opacity: 1; color: #0000ff; }
-          40% { transform: rotate(100deg) scale(0.9); opacity: 0.5; color: #ff00ff; }
-          50% { transform: rotate(80deg) scale(1.1); opacity: 1; color: #ffff00; }
-          60% { transform: rotate(60deg) scale(1); opacity: 0.5; color: #00ffff; }
-          70% { transform: rotate(40deg) scale(1.1); opacity: 1; color: #ff0000; }
-          80% { transform: rotate(20deg) scale(1); opacity: 0.5; color: #00ff00; }
-          90% { transform: rotate(10deg) scale(1.05); opacity: 1; color: #ffffff; }
-          100% { transform: rotate(0deg) scale(1); opacity: 1; color: #ffffff; }
-        }
-      `;
-      document.head.appendChild(style);
-
-      announcement.appendChild(text);
-      document.body.appendChild(announcement);
-
-      // Redirect after animation
-      setTimeout(() => {
-        window.location.href = '/micro/';
-      }, 2500);
-    }, 5000);
-  }
-}
 
 function flipPage(event) {
   event.preventDefault();
@@ -82,7 +31,6 @@ function flipPage(event) {
   const button = document.getElementById('flip-button');
 
   isFlipped = !isFlipped;
-  checkSecret('flip');
 
   if (isFlipped) {
     body.style.transform = 'rotate(180deg)';
@@ -99,7 +47,6 @@ function makeAskew(event) {
   const button = document.getElementById('askew-button');
 
   isAskew = !isAskew;
-  checkSecret('askew');
 
   if (isAskew) {
     // Get only direct text containers
@@ -130,7 +77,6 @@ function capsMode(event) {
   const button = document.getElementById('caps-button');
 
   isCaps = !isCaps;
-  checkSecret('caps');
 
   if (isCaps) {
     document.body.style.textTransform = 'uppercase';

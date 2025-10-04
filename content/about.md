@@ -3,9 +3,7 @@ title = "About"
 date = "2025-09-25"
 +++
 
-<div class="about-profile-image" style="float: right; margin: 0 0 1em 1em; text-align: center; width: 200px;">
-<img src="/images/keiron-profile.png" alt="Me with COVID in 2023" width="200" height="200" style="display: block;" />
-</div>
+{{< thumb "/images/keiron-profile.png" "right" "Me with COVID in 2023" "150" "about-profile-image" >}}
 
 Hi, I'm Keiron. I'm a data scientist working in healthcare at Cwm Taf Morgannwg University Health Board in Wales. I'm passionate about Free and Open Source Software and have strong opinions about technology serving people rather than profit.
 

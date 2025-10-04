@@ -1,0 +1,36 @@
+{{- $src := .Get 0 -}}
+{{- $position := .Get 1 | default "right" -}}
+{{- $caption := .Get 2 -}}
+{{- $width := .Get 3 | default "300" -}}
+{{- $class := .Get 4 -}}
+
+{{- if eq $position "full" -}}
+<figure class="{{ $class }}" style="margin: 1.5em 0; text-align: center;">
+  <img src="{{ $src }}" alt="{{ $caption }}" style="max-width: 100%; height: auto; display: block; margin: 0 auto;" />
+  {{- if $caption -}}
+  <figcaption style="margin-top: 0.5em; font-size: 0.85em; color: #666; font-style: italic;">{{ $caption }}</figcaption>
+  {{- end -}}
+</figure>
+{{- else -}}
+<figure class="thumb-{{ $position }} {{ $class }}" style="
+  float: {{ $position }};
+  margin: {{ if eq $position "right" }}0 0 1em 1em{{ else }}0 1em 1em 0{{ end }};
+  max-width: {{ $width }}px;
+  text-align: center;
+">
+  <img src="{{ $src }}" alt="" style="max-width: 100%; height: auto; display: block;" />
+  {{- if $caption -}}
+  <figcaption style="margin-top: 0.5em; font-size: 0.85em; color: #666; font-style: italic; line-height: 1.4;">{{ $caption }}</figcaption>
+  {{- end -}}
+</figure>
+{{- end -}}
+
+<style>
+@media (max-width: 768px) {
+  .thumb-right, .thumb-left {
+    float: none !important;
+    max-width: 100% !important;
+    margin: 1.5em 0 !important;
+  }
+}
+</style>
