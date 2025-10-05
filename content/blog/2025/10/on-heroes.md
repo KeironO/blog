@@ -6,6 +6,8 @@ description = "Why the left needs movements, not messiahs"
 tags = ['politics', 'socialism', 'greens', 'corbyn', 'grassroots', 'organising']
 +++
 
+{{< thumb "/images/blog/2025/10/cost-of-living-protest.jpg" "full" "Cost of living protest at Parliament Square, London, 12 February 2022. (Credit: [Alisdare Hickson](https://commons.wikimedia.org/wiki/File:Cost_of_living_protest_at_Parliament_Square,_London.jpg), CC BY-SA 4.0.)" >}}
+
 I have political heroes. Nye Bevan, who built the NHS and understood that socialism meant using political power to transform people's material conditions. Michael Foot, whose politics were driven by a strong sense of morality that refused to bend to political expediency. Jim Griffiths, who came from the coalfields and spent decades fighting for Welsh workers and building the welfare state alongside Bevan. Phil Piratin, the Communist who won Mile End in 1945 because he'd spent years organising tenants and fighting fascists in the streets of the East End.
 
 These people inspire me. Their speeches and writings shaped how I think about politics. When I'm tired or demoralised, I read Bevan's *In Place of Fear* or watch old footage of Griffiths speaking, and I remember why this matters. Heroes drive involvement and participation - they show us what's possible, they articulate the politics we're struggling to express, they give us examples to follow.
@@ -47,6 +49,8 @@ When I say we need grassroots movements, I don't mean the kind of performative c
 Look at what the Greens have actually achieved at the local level - not through charismatic leadership but through years of unglamorous council work, through building local networks, through demonstrating that different policies are possible. That's not sexy. It doesn't make for inspiring social media content. But it's what actually builds power.
 
 Or look at the union organising wave we've seen over the last few years: rail workers, nurses, barristers, university staff. These victories didn't come from political leaders - they came from workers collectively withdrawing their labour, from building strike funds and picket lines, from solidarity. That's the kind of power that can't be voted away or undermined by a hostile media.
+
+{{< thumb "/images/blog/2025/10/junior-doctors-strike.jpg" "full" "Junior Doctors on strike outside Norfolk and Norwich University Hospital, 26 April 2016. (Credit: [Katy Jon Went](https://commons.wikimedia.org/wiki/File:4_of_the_earliest_Junior_Doctors_outside_Norfolk_and_Norwich_University_Hospital_NNUH_A3_(26649205806).jpg), CC BY 2.0.)" >}}
 
 This is what separates a movement from a fan club. A movement can survive the loss of any individual leader because power is distributed, because structures exist beyond personalities, because the collective is stronger than any individual. When your politics are built around a hero, losing that hero means losing everything.
 

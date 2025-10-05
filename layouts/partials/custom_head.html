@@ -605,8 +605,8 @@ document.addEventListener('DOMContentLoaded', function() {
   if (blogContent) {
     const images = blogContent.querySelectorAll('img');
     images.forEach(img => {
-      // Skip if already wrapped, is the profile image, or is inside a figure element
-      if (img.closest('.blog-image-wrapper') || img.alt === 'me' || img.closest('figure')) {
+      // Skip if already wrapped, is the profile image, is inside a figure element, or is in an index card
+      if (img.closest('.blog-image-wrapper') || img.alt === 'me' || img.closest('figure') || img.closest('.index-card')) {
         return;
       }
 

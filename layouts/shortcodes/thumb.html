@@ -8,7 +8,7 @@
 <figure class="{{ $class }}" style="margin: 1.5em 0; text-align: center;">
   <img src="{{ $src }}" alt="{{ $caption }}" style="max-width: 100%; height: auto; display: block; margin: 0 auto;" />
   {{- if $caption -}}
-  <figcaption style="margin-top: 0.5em; font-size: 0.85em; color: #666; font-style: italic;">{{ $caption }}</figcaption>
+  <figcaption style="margin-top: 0.5em; font-size: 0.85em; color: #666; font-style: italic;">{{ $caption | markdownify }}</figcaption>
   {{- end -}}
 </figure>
 {{- else -}}
@@ -20,7 +20,7 @@
 ">
   <img src="{{ $src }}" alt="" style="max-width: 100%; height: auto; display: block;" />
   {{- if $caption -}}
-  <figcaption style="margin-top: 0.5em; font-size: 0.85em; color: #666; font-style: italic; line-height: 1.4;">{{ $caption }}</figcaption>
+  <figcaption style="margin-top: 0.5em; font-size: 0.85em; color: #666; font-style: italic; line-height: 1.4;">{{ $caption | markdownify }}</figcaption>
   {{- end -}}
 </figure>
 {{- end -}}
