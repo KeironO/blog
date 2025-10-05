@@ -1,7 +1,7 @@
 +++
 title = "Cringe Millennials"
 date = 2025-10-04
-draft = false
+draft = true
 description = "We're broke, we're cringe, and we're socialist."
 tags = ['politics', 'socialism', 'millennials', 'bernie sanders', 'dsa', 'capitalism']
 +++
