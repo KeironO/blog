@@ -1,7 +1,7 @@
 +++
 title = "Cringe Millennials: A Defence of Millennial Socialism"
 date = 2025-10-04
-draft = false
+draft = true
 description = "It's irony-poisoned, terminally online, and undeniably cringe. But it's also correct."
 tags = ['politics', 'socialism', 'millennials', 'bernie sanders', 'dsa', 'capitalism']
 +++
