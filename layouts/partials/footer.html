@@ -1,12 +1,12 @@
 <div style="margin-top: 2em; border-top: 1px solid #ccc; padding-top: 1em;">
-  <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 2em;">
+  <div class="footer-content" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 2em;">
     <div>
       <p style="margin: 0;">
         © {{ now.Year }} {{ .Site.Params.author | default .Site.Title }}.
         Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>.
       </p>
     </div>
-    <div style="display: flex; flex-direction: column; gap: 0.5em; text-align: right;">
+    <div class="footer-links" style="display: flex; flex-direction: column; gap: 0.5em; text-align: right;">
       <a href="/search/" style="color: var(--link-color); text-decoration: none;">Search</a>
       <a href="#" id="flip-button" style="color: var(--link-color); text-decoration: none;" onclick="flipPage(event)">Flip page 180°</a>
       <a href="#" id="askew-button" style="color: var(--link-color); text-decoration: none;" onclick="makeAskew(event)">Make text askew</a>
