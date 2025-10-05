@@ -1,0 +1,38 @@
+{{- $content := .Inner -}}
+
+<div class="poem-wrapper">
+  {{ $content | markdownify }}
+</div>
+
+<style>
+.poem-wrapper {
+  margin: 2em auto;
+  max-width: 600px;
+  text-align: center;
+  font-style: italic;
+  line-height: 1.8;
+}
+
+.poem-wrapper p {
+  text-align: left;
+  margin-left: 2em;
+  white-space: pre-line;
+}
+
+/* Disable dropcap for poems */
+.post-wrapper.blog-post .poem-wrapper p::first-letter,
+.poem-wrapper p::first-letter {
+  float: none !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-weight: inherit !important;
+  color: inherit !important;
+  background-color: transparent !important;
+  text-align: inherit !important;
+  width: auto !important;
+  height: auto !important;
+  display: inline !important;
+}
+</style>

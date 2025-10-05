@@ -49,6 +49,25 @@ Captions support markdown. Use this format for proper attribution:
 - Images in `.index-card` elements are NOT wrapped
 - The profile image (`alt="me"`) is NOT wrapped
 
+## Writing Poems
+
+Use the `poem` shortcode to format poetry properly:
+
+```
+{{< poem >}}
+Your poem text here
+Line breaks are preserved
+Each stanza separated by blank lines
+{{< /poem >}}
+```
+
+The poem shortcode:
+- Centers the poem with max width of 600px
+- Italicizes the text
+- Indents lines by 2em
+- Disables dropcaps
+- Preserves line breaks
+
 ## Image Compression
 
 To compress images to a reasonable size for web, run:
