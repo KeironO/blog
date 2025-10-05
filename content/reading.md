@@ -9,7 +9,7 @@ So instead of feeding another corporate platform with my reading data, I'm track
 
 ## 2025
 
--**To Make the People Smile Again : A Memoir of the Spanish Civil War** by George Wheeler <sup>(September 2025)</sup>
+- **To Make the People Smile Again : A Memoir of the Spanish Civil War** by George Wheeler <sup>(September 2025)</sup>
 
 - **Minority Rule** by Ash Sarkar <sup>(September 2025)</sup>
   The media cycle around the book didn't do it justice. An nabashedly Marxist analysis about identity politics, and how the right have co-opted it.
