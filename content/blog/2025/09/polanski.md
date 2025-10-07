@@ -6,7 +6,7 @@ description = "On why we need class-based politics, but worry about who fills th
 tags = ['politics', 'greens', 'environment', 'class', 'wales']
 +++
 
-I've always been a class-first socialist. The fundamental divide in society isn't between environmentalists and anti-environmentalists - it's between those who own capital and those who sell their labour. Everything else, including the climate crisis, is filtered through that basic reality. So when Zack Polanski won the Green Party leadership with his eco-populist platform, my intellectual response was: finally, someone who gets it.
+I've always been a class-first socialist. The fundamental divide in society isn't between environmentalists and anti-environmentalists - it's between those who own capital and those who sell their labour. Everything else, including the climate crisis, is filtered through that basic reality. So when Zack Polanski won the Green Party leadership with his eco-populist platform, my immediate response was: "finally, someone who _gets_ it".
 
 Polanski's landslide victory - 85% of the vote, the largest margin in Green Party history - represented something I'd been waiting for: a political movement that refused to separate environmental action from economic justice. His message was crystal clear: you can't ask people to worry about net zero when they're struggling to heat their homes. Climate action without wealth redistribution is middle-class theatre.
 
