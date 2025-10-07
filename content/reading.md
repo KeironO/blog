@@ -13,8 +13,8 @@ So instead of feeding another corporate platform with my reading data, I'm track
 
 - **To Make the People Smile Again : A Memoir of the Spanish Civil War** by George Wheeler <sup>(September 2025)</sup>
 
-- **Minority Rule** by Ash Sarkar <sup>(September 2025)</sup>
-  The media cycle around the book didn't do it justice. An nabashedly Marxist analysis about identity politics, and how the right have co-opted it.
+- **Minority Rule: Adventures in the Culture War** by Ash Sarkar <sup>(September 2025)</sup>
+  The media cycle around the book didn't do it justice. An unapologetically Marxist analysis of how the irrational fear that minorities are trying to oppress majorities serves to legitimate rule by an elite minority.
 
 - **[The Enemy Within: The Rise and Fall of the British Communist Party](https://wellredbooks.co.uk/product/enemy-within-the-rise-and-fall-of-the-british-communist-party/)** by Francis Beckett <sup>(September 2025)</sup>
 
