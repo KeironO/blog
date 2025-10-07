@@ -68,6 +68,8 @@ The Chartists, campaigning for working-class suffrage in the 1840s, faced simila
 
 This is the pattern that repeats throughout history: legal tools created for one purpose get weaponised against political dissent, and each expansion of state power gets justified as protecting public safety.
 
+{{< subscribe >}}
+
 ### The 1930s: Fascism Provides the Excuse
 
 The rise of fascist movements in the 1930s - particularly the British Union of Fascists with their provocative marches through Jewish areas of East London - created a genuine crisis. Something had to be done about paramilitaries in political uniforms terrorising communities.[^7a]

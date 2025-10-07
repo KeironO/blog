@@ -23,14 +23,25 @@ If you want to support my writing, you can [buy me a coffee on Ko-fi](https://ko
 
 ## How to Subscribe
 
+### Quick Subscribe Form
+
+Enter your email below to subscribe via Follow.it:
+
+<form action="https://api.follow.it/subscription-form/N0ZpWTRIZi9SdEsvaDVySjg5ZXVWclJvREdVT2c2STZTWVNMaHp0cmNQbTNnNzRWTHBjSTRNdXNCQ0JPQWU4emEyMEZjb1F0T0E1RzZDV2hrTnVMeHR5YjBiMnA4TjU0NlhpQjd1emlERXlyV0FuajNGKzZpZXFLWkZwZFZ5UWN8QlNpVFFpdlZ1WVVLUmQ4U2ozRXUvWlBsYWhXRFpCcFB3UzJWSmZBb2VYND0=/8" method="post" style="background: #fff1e6; border: 3px solid #000; padding: 24px; margin: 2em 0;">
+  <input type="email" name="email" required placeholder="Enter your email address" style="padding: 12px; width: 100%; max-width: 100%; border: 2px solid #000; font-size: 1em; margin-bottom: 16px; box-sizing: border-box; background: #fff;" />
+  <button type="submit" style="padding: 12px 24px; background: #000; color: #fff; border: none; font-size: 1em; cursor: pointer; font-weight: 600; transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='#333'" onmouseout="this.style.backgroundColor='#000'">Subscribe</button>
+</form>
+
+### Alternative: Use Blogtrottr
+
+If you prefer to use Blogtrottr instead:
+
 1. Go to [Blogtrottr.com](https://blogtrottr.com/)
 2. Enter this blog's RSS feed: <span class="copy-url" style="cursor: pointer; background: #f0f0f0; padding: 2px 6px; border-radius: 3px; user-select: all; font-family: monospace; font-size: 0.9em;" onclick="navigator.clipboard.writeText('https://keiron.xyz/blog/index.xml').then(() => { this.textContent = 'Copied!'; setTimeout(() => { this.textContent = 'https://keiron.xyz/blog/index.xml'; }, 2000); })" title="Click to copy">https://keiron.xyz/blog/index.xml</span>
 3. Enter your email address
 4. Choose your delivery frequency (real-time, daily digest, or weekly)
 5. Click "Feed Me"
 6. Confirm your subscription via the email they send you
-
-That's it. You'll now get an email whenever I publish a new post.
 
 ## For RSS Purists
 
