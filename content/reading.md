@@ -9,6 +9,8 @@ So instead of feeding another corporate platform with my reading data, I'm track
 
 ## 2025
 
+- **The Internet Con: How to Seize the Means of Computation** by Cory Doctorow <sup>(October 2025)</sup>
+
 - **To Make the People Smile Again : A Memoir of the Spanish Civil War** by George Wheeler <sup>(September 2025)</sup>
 
 - **Minority Rule** by Ash Sarkar <sup>(September 2025)</sup>
