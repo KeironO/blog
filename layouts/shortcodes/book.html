@@ -8,7 +8,8 @@
 <div class="book-item">
   {{- if $isbn -}}
   <div class="book-cover">
-    <img src="https://covers.openlibrary.org/b/isbn/{{ $isbn }}-M.jpg"
+    {{- $cleanIsbn := replace $isbn "-" "" -}}
+    <img src="/img/book-covers/{{ $cleanIsbn }}.jpg"
          alt="Cover of {{ $title }}"
          loading="lazy" />
   </div>
