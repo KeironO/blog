@@ -23,14 +23,23 @@
       </time>
       <span class="reading-time">• {{ .ReadingTime }} min read</span>
     </div>
-    <hr class="subtitle-rule">
 
     {{ if eq .Section "blog" }}
-    <div class="disclaimer">
-      <em>The views expressed in this post are my own and do not represent my employer.</em>
+    {{ $audioPath := printf "%s.ogg" .File.ContentBaseName }}
+    {{ $audioFile := printf "blog/%s/%s" (.Date.Format "2006/01") $audioPath }}
+    {{ if fileExists (printf "content/%s" $audioFile) }}
+    <div class="audio-player">
+      <span class="audio-label">🎧 Listen to this post</span>
+      <audio controls preload="metadata">
+        <source src="{{ (printf "/%s" $audioFile) | relURL }}" type="audio/ogg">
+        Your browser does not support the audio element.
+      </audio>
     </div>
     {{ end }}
-    
+    {{ end }}
+
+    <hr class="subtitle-rule">
+
     {{ $toc := .TableOfContents }}
     {{ if and $toc (not (eq $toc "<nav id=\"TableOfContents\"></nav>")) (eq .Section "blog") }}
     <div class="toc-sidebar">
@@ -70,6 +79,26 @@
 </content>
 
 <style>
+.audio-player {
+  padding: 0.75rem;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.audio-player .audio-label {
+  font-size: 0.85rem;
+  color: #495057;
+  white-space: nowrap;
+}
+
+.audio-player audio {
+  flex: 1;
+  height: 32px;
+  outline: none;
+}
+
 .truism-tooltip {
   position: absolute;
   background: #000;

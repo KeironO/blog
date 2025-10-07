@@ -3,6 +3,7 @@
     "tags": [
       "a",
       "aside",
+      "audio",
       "blockquote",
       "body",
       "br",
@@ -38,6 +39,7 @@
       "pre",
       "script",
       "small",
+      "source",
       "span",
       "strike",
       "strong",
@@ -51,6 +53,8 @@
     "classes": [
       "about-profile-image",
       "archive-posts",
+      "audio-label",
+      "audio-player",
       "blog-post",
       "blog-posts",
       "book-author",
@@ -68,7 +72,6 @@
       "collapsed",
       "copy-url",
       "cover-placeholder",
-      "disclaimer",
       "footer-content",
       "footer-links",
       "footnote-backref",
