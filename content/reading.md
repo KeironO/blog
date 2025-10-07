@@ -9,14 +9,22 @@ So instead of feeding another corporate platform with my reading data, I'm track
 
 ## 2025
 
-- **The Internet Con: How to Seize the Means of Computation** by Cory Doctorow <sup>(October 2025)</sup>
+<div class="book-grid">
 
-- **To Make the People Smile Again : A Memoir of the Spanish Civil War** by George Wheeler <sup>(September 2025)</sup>
+{{< book isbn="9781804291207" title="The Internet Con: How to Seize the Means of Computation" author="Cory Doctorow" publisher="Verso" year="2023" month="October" >}}
+{{< /book >}}
 
-- **Minority Rule: Adventures in the Culture War** by Ash Sarkar <sup>(September 2025)</sup>
-  The media cycle around the book didn't do it justice. An unapologetically Marxist analysis of how the irrational fear that minorities are trying to oppress majorities serves to legitimate rule by an elite minority.
+{{< book isbn="978-1903506073" title="To Make the People Smile Again: A Memoir of the Spanish Civil War" author="George Wheeler" month="September" year="2025" >}}
+{{< /book >}}
 
-- **[The Enemy Within: The Rise and Fall of the British Communist Party](https://wellredbooks.co.uk/product/enemy-within-the-rise-and-fall-of-the-british-communist-party/)** by Francis Beckett <sup>(September 2025)</sup>
+{{< book isbn="9781526648327" title="Minority Rule: Adventures in the Culture War" author="Ash Sarkar" publisher="Bloomsbury Publishing" month="September" year="2025" >}}
+The media cycle around the book didn't do it justice. An unapologetically Marxist analysis of how the irrational fear that minorities are trying to oppress majorities serves to legitimate rule by an elite minority.
+{{< /book >}}
+
+{{< book isbn="978-0719553103" title="The Enemy Within: The Rise and Fall of the British Communist Party" author="Francis Beckett" month="September" year="2025" >}}
+{{< /book >}}
+
+</div>
 
 ---
 

@@ -1,0 +1,113 @@
+{{- $isbn := .Get "isbn" -}}
+{{- $title := .Get "title" -}}
+{{- $author := .Get "author" -}}
+{{- $publisher := .Get "publisher" -}}
+{{- $year := .Get "year" -}}
+{{- $month := .Get "month" -}}
+
+<div class="book-item">
+  {{- if $isbn -}}
+  <div class="book-cover">
+    <img src="https://covers.openlibrary.org/b/isbn/{{ $isbn }}-M.jpg"
+         alt="Cover of {{ $title }}"
+         loading="lazy" />
+  </div>
+  {{- end -}}
+  <div class="book-details">
+    <div class="book-title">{{ $title }}</div>
+    <div class="book-author">{{ $author }}</div>
+    {{- if $month }}
+    <div class="book-date">{{ $month }} {{ $year }}</div>
+    {{- else if $year }}
+    <div class="book-date">{{ $year }}</div>
+    {{- end -}}
+    {{- if $publisher -}}
+    <div class="book-publisher">{{ $publisher }}</div>
+    {{- end -}}
+    {{- if $isbn -}}
+    <div class="book-isbn">ISBN: {{ $isbn }}</div>
+    {{- end -}}
+    {{- with .Inner -}}
+    <div class="book-commentary">{{ . | markdownify }}</div>
+    {{- end -}}
+  </div>
+</div>
+
+<style>
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2em;
+  margin: 2em 0;
+}
+
+.book-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+}
+
+.book-cover {
+  aspect-ratio: 2/3;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.book-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.book-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35em;
+}
+
+.book-title {
+  font-weight: bold;
+  font-size: 0.95em;
+  line-height: 1.3;
+}
+
+.book-author {
+  font-size: 0.9em;
+  color: #555;
+}
+
+.book-date {
+  font-size: 0.85em;
+  color: #888;
+}
+
+.book-publisher {
+  font-size: 0.85em;
+  color: #666;
+}
+
+.book-isbn {
+  font-size: 0.8em;
+  color: #999;
+}
+
+.book-commentary {
+  font-size: 0.9em;
+  margin-top: 0.5em;
+  line-height: 1.4;
+}
+
+@media (max-width: 1024px) {
+  .book-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .book-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
