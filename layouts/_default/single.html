@@ -24,6 +24,12 @@
       <span class="reading-time">• {{ .ReadingTime }} min read</span>
     </div>
     <hr class="subtitle-rule">
+
+    {{ if eq .Section "blog" }}
+    <div class="disclaimer">
+      <em>The views expressed in this post are my own and do not represent my employer.</em>
+    </div>
+    {{ end }}
     
     {{ $toc := .TableOfContents }}
     {{ if and $toc (not (eq $toc "<nav id=\"TableOfContents\"></nav>")) (eq .Section "blog") }}

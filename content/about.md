@@ -5,7 +5,7 @@ date = "2025-09-25"
 
 {{< thumb "/images/keiron-profile.png" "right" "Me with COVID in 2023" "150" "about-profile-image" >}}
 
-Hi, I'm Keiron. I'm a data scientist working in healthcare at Cwm Taf Morgannwg University Health Board in Wales. I'm passionate about Free and Open Source Software and have strong opinions about technology serving people rather than profit.
+Hi, I'm Keiron. I'm a data scientist passionate about Free and Open Source Software and have strong opinions about technology serving people rather than profit.
 
 I write about technology, politics, healthcare, and the intersection of digital rights and social democracy. You'll find skeptical takes on tech hype, thoughts on health informatics, and occasional rants about Python packaging and Welsh politics.
 
