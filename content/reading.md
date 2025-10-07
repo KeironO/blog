@@ -21,7 +21,7 @@ So instead of feeding another corporate platform with my reading data, I'm track
 The media cycle around the book didn't do it justice. An unapologetically Marxist analysis of how the irrational fear that minorities are trying to oppress majorities serves to legitimate rule by an elite minority.
 {{< /book >}}
 
-{{< book isbn="9780719553103" title="The Enemy Within: The Rise and Fall of the British Communist Party" author="Francis Beckett" month="September" year="2025" >}}
+{{< book isbn="0719553105" title="The Enemy Within: The Rise and Fall of the British Communist Party" author="Francis Beckett" month="September" year="2025" >}}
 {{< /book >}}
 
 </div>
