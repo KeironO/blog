@@ -9,13 +9,15 @@
   {{- if $isbn -}}
   <div class="book-cover">
     {{- $cleanIsbn := replace $isbn "-" "" -}}
-    <img src="/img/book-covers/{{ $cleanIsbn }}.jpg"
-         alt="Cover of {{ $title }}"
-         loading="lazy"
-         onerror="this.onerror=null; this.style.display='none'; this.parentElement.classList.add('no-cover');" />
-    <div class="cover-placeholder" style="display: none;">
-      <div class="placeholder-text">Cover Not Found</div>
-    </div>
+    <a href="https://openlibrary.org/isbn/{{ $cleanIsbn }}" target="_blank" rel="noopener noreferrer">
+      <img src="/img/book-covers/{{ $cleanIsbn }}.jpg"
+           alt="Cover of {{ $title }}"
+           loading="lazy"
+           onerror="this.onerror=null; this.style.display='none'; this.parentElement.parentElement.classList.add('no-cover');" />
+      <div class="cover-placeholder" style="display: none;">
+        <div class="placeholder-text">Cover Not Found</div>
+      </div>
+    </a>
   </div>
   {{- end -}}
   <div class="book-details">
