@@ -50,6 +50,7 @@
     ],
     "classes": [
       "about-profile-image",
+      "archive-posts",
       "blog-post",
       "blog-posts",
       "book-author",

@@ -8,7 +8,9 @@
   {{ end }}
 
   {{ if .Pages }}
+    {{ $currentYear := 2025 }}
     {{ range (.Pages.GroupByDate "2006") }}
+    {{ if ge (int .Key) $currentYear }}
     <h3>{{ .Key }}</h3>
     <ul class="blog-posts">
       {{ range .Pages }}
@@ -30,6 +32,34 @@
           </div>
           {{ end }}
         </div>
+      </li>
+      {{ end }}
+    </ul>
+    {{ end }}
+    {{ end }}
+
+    {{ $archivePosts := slice }}
+    {{ range (.Pages.GroupByDate "2006") }}
+    {{ if lt (int .Key) $currentYear }}
+    {{ range .Pages }}
+    {{ $archivePosts = $archivePosts | append . }}
+    {{ end }}
+    {{ end }}
+    {{ end }}
+
+    {{ if gt (len $archivePosts) 0 }}
+    <h3>Archive</h3>
+    <ul class="blog-posts archive-posts">
+      {{ range $archivePosts }}
+      <li>
+        <span>
+          <i>
+            <time datetime='{{ .Date.Format "2006-01-02" }}'>
+              {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+            </time>
+          </i>
+        </span>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
       </li>
       {{ end }}
     </ul>
