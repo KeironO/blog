@@ -1,9 +1,30 @@
 <style>
+.header-wrapper {
+  margin-bottom: 20px;
+}
+
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+}
+
+.header-container.sticky {
+  position: fixed;
+  top: -100px;
+  left: 0;
+  right: 0;
+  background-color: var(--background-color);
+  padding: 15px 20px;
+  transition: top 0.3s ease-in-out;
+  z-index: 1000;
+  max-width: var(--width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header-container.sticky.visible {
+  top: 0;
 }
 
 .site-title {
@@ -14,6 +35,7 @@
   margin: 0;
   border: 3px solid #000;
   transition: background-color 0.2s ease;
+  transform: rotate(-2deg);
 }
 
 .title {
@@ -70,3 +92,33 @@ nav a:hover {
   </a>
   <nav>{{- partial "nav.html" . -}}</nav>
 </div>
+
+<script>
+(function() {
+  let lastScrollTop = 0;
+  const header = document.querySelector('.header-container');
+  const threshold = window.innerHeight / 2;
+
+  window.addEventListener('scroll', function() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > threshold) {
+      header.classList.add('sticky');
+
+      if (scrollTop < lastScrollTop) {
+        // Scrolling up
+        header.classList.add('visible');
+      } else {
+        // Scrolling down
+        header.classList.remove('visible');
+      }
+    } else {
+      // At the top of the page
+      header.classList.remove('sticky');
+      header.classList.remove('visible');
+    }
+
+    lastScrollTop = scrollTop;
+  }, false);
+})();
+</script>

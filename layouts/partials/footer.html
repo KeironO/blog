@@ -1,24 +1,27 @@
 <div class="footer-wrapper">
-  <div class="footer-content" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 2em;">
-    <div>
-      <p style="margin: 0;">
-        © 2009-{{ now.Year }} {{ .Site.Params.author | default .Site.Title }}.
-        Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>.
-      </p>
+  <div class="footer-content">
+    <div style="text-align: center; margin-bottom: 1.5em;">
+      <a href="/" style="background-color: #fff !important; color: #000 !important; padding: 8px 12px; display: inline-block; margin: 0; border: 3px solid #fff; text-decoration: none; font-weight: 600; transition: all 0.2s ease;" onmouseover="this.style.setProperty('background-color', '#161613', 'important'); this.style.setProperty('color', '#f6f4ef', 'important'); this.style.borderColor='#161613'" onmouseout="this.style.setProperty('background-color', '#fff', 'important'); this.style.setProperty('color', '#000', 'important'); this.style.borderColor='#fff'">keiron.xyz</a>
     </div>
-    <div class="footer-links" style="display: flex; flex-direction: column; gap: 0.5em; text-align: right;">
+    <div class="footer-links" style="display: flex; gap: 1.5em; flex-wrap: wrap; margin-bottom: 1em; justify-content: center; align-items: center;">
       <a href="/subscribe/" class="footer-link-box">Subscribe</a>
       <a href="/search/" class="footer-link-box">Search</a>
       <a href="#" id="flip-button" class="footer-link-box" onclick="flipPage(event)">Flip page 180°</a>
       <a href="#" id="askew-button" class="footer-link-box" onclick="makeAskew(event)">Make text askew</a>
       <a href="#" id="caps-button" class="footer-link-box" onclick="capsMode(event)">Shout at me</a>
     </div>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <p style="margin: 0;">
+        © 2009-{{ now.Year }} {{ .Site.Params.author | default .Site.Title }}.
+        Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>.
+      </p>
+      {{ if not (.Param "hideMadeWithLine") }}
+      <p style="margin: 0; font-size: 0.9em; color: #999;">
+        Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+      </p>
+      {{ end }}
+    </div>
   </div>
-  {{ if not (.Param "hideMadeWithLine") }}
-  <p style="margin-top: 0.5em; font-size: 0.9em; color: #666; text-align: center;">
-    Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
-  </p>
-  {{ end }}
 </div>
 
 <script>

@@ -146,26 +146,88 @@
   --font-scale: 1.3em !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background-color: #f6f4ef !important;
-    --heading-color: #15171a !important;
-    --text-color: #21252b !important;
-    --link-color: #0969da !important;
-    --visited-color: #8b6fcb !important;
-    --blockquote-color: #21252b !important;
-  }
+html {
+  height: 100% !important;
 }
 
 body {
   color: rgb(32, 34, 36) !important;
   font-weight: 400 !important;
   letter-spacing: -0.36px !important;
+  min-height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+main {
+  flex: 1 !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600 !important;
   letter-spacing: -0.02em !important;
+}
+
+.post-wrapper .Content h1,
+.post-wrapper .Content h2,
+.post-wrapper .Content h3,
+.post-wrapper .Content h4,
+.post-wrapper .Content h5,
+.post-wrapper .Content h6,
+.post-wrapper > p + h1,
+.post-wrapper > p + h2,
+.post-wrapper > p + h3,
+.post-wrapper > p + h4,
+.post-wrapper > p + h5,
+.post-wrapper > p + h6,
+.post-wrapper > hr + h1,
+.post-wrapper > hr + h2,
+.post-wrapper > hr + h3,
+.post-wrapper > hr + h4,
+.post-wrapper > hr + h5,
+.post-wrapper > hr + h6,
+.post-wrapper > h2,
+.post-wrapper > h3,
+.post-wrapper > h4,
+.post-wrapper > h5,
+.post-wrapper > h6 {
+  display: flex !important;
+  align-items: baseline !important;
+  gap: 0.25em !important;
+}
+
+.post-wrapper .Content h1::after,
+.post-wrapper .Content h2::after,
+.post-wrapper .Content h3::after,
+.post-wrapper .Content h4::after,
+.post-wrapper .Content h5::after,
+.post-wrapper .Content h6::after,
+.post-wrapper > p + h1::after,
+.post-wrapper > p + h2::after,
+.post-wrapper > p + h3::after,
+.post-wrapper > p + h4::after,
+.post-wrapper > p + h5::after,
+.post-wrapper > p + h6::after,
+.post-wrapper > hr + h1::after,
+.post-wrapper > hr + h2::after,
+.post-wrapper > hr + h3::after,
+.post-wrapper > hr + h4::after,
+.post-wrapper > hr + h5::after,
+.post-wrapper > hr + h6::after,
+.post-wrapper > h2::after,
+.post-wrapper > h3::after,
+.post-wrapper > h4::after,
+.post-wrapper > h5::after,
+.post-wrapper > h6::after {
+  content: '' !important;
+  flex: 1 !important;
+  border-bottom: 4px solid #ff0000 !important;
+}
+
+.post-wrapper > h1::after {
+  content: none !important;
 }
 
 .title h1 {
@@ -667,6 +729,36 @@ blockquote {
   .about-profile-image {
     display: none !important;
   }
+}
+
+footer {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.footer-wrapper {
+  background-color: #161613 !important;
+  color: #f6f4ef !important;
+  padding: 60px 0 25px 0 !important;
+  margin-top: 80px !important;
+  width: 100vw !important;
+  margin-left: calc(-50vw + 50%) !important;
+  margin-bottom: 0 !important;
+  font-family: var(--font-main) !important;
+}
+
+.footer-content {
+  max-width: var(--width) !important;
+  margin: 0 auto !important;
+  padding: 0 20px !important;
+}
+
+.footer-wrapper p {
+  font-size: 0.85em !important;
+}
+
+.footer-wrapper a {
+  color: #f6f4ef !important;
 }
 
 @media (max-width: 768px) {
