@@ -1,4 +1,4 @@
-<div style="margin-top: 2em; border-top: 1px solid #ccc; padding-top: 1em;">
+<div class="footer-wrapper">
   <div class="footer-content" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 2em;">
     <div>
       <p style="margin: 0;">
@@ -7,11 +7,11 @@
       </p>
     </div>
     <div class="footer-links" style="display: flex; flex-direction: column; gap: 0.5em; text-align: right;">
-      <a href="/subscribe/" style="color: var(--link-color); text-decoration: none;">Subscribe</a>
-      <a href="/search/" style="color: var(--link-color); text-decoration: none;">Search</a>
-      <a href="#" id="flip-button" style="color: var(--link-color); text-decoration: none;" onclick="flipPage(event)">Flip page 180°</a>
-      <a href="#" id="askew-button" style="color: var(--link-color); text-decoration: none;" onclick="makeAskew(event)">Make text askew</a>
-      <a href="#" id="caps-button" style="color: var(--link-color); text-decoration: none;" onclick="capsMode(event)">Shout at me</a>
+      <a href="/subscribe/" class="footer-link-box">Subscribe</a>
+      <a href="/search/" class="footer-link-box">Search</a>
+      <a href="#" id="flip-button" class="footer-link-box" onclick="flipPage(event)">Flip page 180°</a>
+      <a href="#" id="askew-button" class="footer-link-box" onclick="makeAskew(event)">Make text askew</a>
+      <a href="#" id="caps-button" class="footer-link-box" onclick="capsMode(event)">Shout at me</a>
     </div>
   </div>
   {{ if not (.Param "hideMadeWithLine") }}
