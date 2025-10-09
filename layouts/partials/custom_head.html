@@ -165,12 +165,33 @@ body {
   min-height: 100% !important;
   display: flex !important;
   flex-direction: column !important;
-  padding-bottom: 0 !important;
-  margin-bottom: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
   background-color: #f6f4ef !important;
+  max-width: none !important;
+}
+
+header {
+  max-width: var(--width) !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 20px !important;
+  position: sticky !important;
+  top: 0 !important;
+  background-color: #f6f4ef !important;
+  z-index: 100 !important;
+  transition: transform 0.3s ease-in-out !important;
+}
+
+header.nav-hidden {
+  transform: translateY(-100%) !important;
 }
 
 main {
+  max-width: var(--width) !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 20px !important;
   flex: 1 !important;
 }
 
@@ -750,8 +771,7 @@ footer {
   color: #f6f4ef !important;
   padding: 60px 0 25px 0 !important;
   margin-top: 80px !important;
-  width: 100vw !important;
-  margin-left: calc(-50vw + 50%) !important;
+  width: 100% !important;
   margin-bottom: 0 !important;
   font-family: var(--font-main) !important;
 }
@@ -847,5 +867,36 @@ document.addEventListener('DOMContentLoaded', function() {
       document.body.insertBefore(notice.firstElementChild, document.body.firstChild);
     }
   }
+
+  // Hide/show navigation on scroll
+  let lastScrollTop = 0;
+  let scrollThreshold = 100; // Start hiding after scrolling 100px
+  const header = document.querySelector('header');
+
+  window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    // Only apply behavior on mobile/tablet (adjust breakpoint as needed)
+    if (window.innerWidth <= 768) {
+      if (scrollTop > scrollThreshold) {
+        // Scrolling down - hide nav
+        if (scrollTop > lastScrollTop) {
+          header.classList.add('nav-hidden');
+        }
+        // Scrolling up - show nav
+        else {
+          header.classList.remove('nav-hidden');
+        }
+      } else {
+        // At top of page - always show
+        header.classList.remove('nav-hidden');
+      }
+    } else {
+      // On desktop, always show header
+      header.classList.remove('nav-hidden');
+    }
+
+    lastScrollTop = scrollTop;
+  }, false);
 });
 </script>
