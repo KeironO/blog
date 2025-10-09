@@ -107,15 +107,17 @@ Open standards ensure portability. The patient's complete record exports in a st
 
 NHS Wales has specific needs and opportunities that make open standards particularly important.
 
-**Scale**: Wales is small enough that comprehensive interoperability is achievable. Unlike NHS England, which has hundreds of trusts and thousands of practices, NHS Wales has seven health boards and a manageable number of primary care practices. This makes standardisation feasible.
+**Scale**: Wales is small enough that comprehensive interoperability is achievable. Unlike NHS England, which has hundreds of trusts and thousands of practices, NHS Wales has seven health boards and a manageable number of primary care practices. This makes coordination feasible without heavy-handed centralisation.
 
-**Digital Health and Care Wales**: DHCW already provides infrastructure services across NHS Wales. This is the perfect vehicle for mandating and supporting open standards adoption. Central coordination can drive interoperability in ways that fragmented procurement can't.
+**Decentralisation with coordination**: The answer isn't centralising everything under one monolithic organisation. Centralisation just replaces vendor lock-in with bureaucratic lock-in - slow decision-making, one-size-fits-all solutions, distance from clinical reality. Instead, health boards should control their own systems while coordinating on open standards and sharing code. Each board chooses or builds solutions that work for their context, but all implement the same open standards for interoperability. When one board builds something useful, they share the source code. Other boards can adopt it, adapt it, or build something different - but it all works together because of shared standards.
 
-**Welsh Language**: Health data in Wales should support both English and Welsh. Open standards like SNOMED CT support multiple languages. Proprietary systems often don't, or charge extra for language support. Open standards ensure Welsh language support is built into the infrastructure.
+**Open source, not centralised control**: This model requires health boards to release their code as open source. When Betsi Cadwaladr builds a module for prescribing, Aneurin Bevan can use it, improve it, or learn from it. When Cardiff and Vale solves a problem with lab integration, Hywel Dda benefits. Knowledge and solutions flow between boards, but control remains distributed. Each board maintains autonomy while contributing to shared infrastructure. This is how you get the benefits of coordination without the costs of centralisation.
 
-**Integrated care ambitions**: The Welsh Government's commitment to integrated health and social care depends absolutely on systems that share data effectively. You cannot have integrated care with siloed systems. Open standards are not optional if integration is the goal.
+**Welsh Language**: Health data in Wales should support both English and Welsh. Open standards like SNOMED CT support multiple languages. Proprietary systems often don't, or charge extra for language support. When boards share code that properly implements Welsh language support, everyone benefits without duplicating the work.
 
-**Public service values**: NHS Wales is a public service, funded by Welsh taxpayers, serving the people of Wales. The infrastructure should reflect public ownership and democratic accountability, not corporate control. Open standards align with public service values in ways that vendor lock-in never can.
+**Integrated care ambitions**: The Welsh Government's commitment to integrated health and social care depends absolutely on systems that share data effectively. You cannot have integrated care with siloed systems. But integration doesn't require centralisation - it requires interoperability. Open standards enable health boards to run different systems that still exchange data seamlessly.
+
+**Public service values**: NHS Wales is a public service, funded by Welsh taxpayers, serving the people of Wales. The infrastructure should reflect public ownership and democratic accountability, not corporate control or bureaucratic monopoly. Open standards with distributed control align with public service values - health boards accountable to their communities, sharing solutions collaboratively, building commons rather than silos.
 
 ## The Counterarguments
 
@@ -131,29 +133,29 @@ There are predictable objections to mandating open standards. Let me address the
 
 **"This will limit innovation."** The opposite. Proprietary silos limit innovation to what the vendor chooses to build. Open standards enable anyone to innovate because the interfaces are open. Look at the internet - open protocols enabled explosive innovation because anyone could build on shared standards. Proprietary platforms like AOL tried to lock users in and were surpassed by open alternatives.
 
-**"We don't have the expertise."** Then develop it. NHS Wales should have in-house expertise on health data standards. This is core infrastructure - dependence on vendors for expertise is itself a form of lock-in. Invest in training. Hire specialists. Work with academic partners. This expertise is essential for maintaining control over your own systems.
+**"We don't have the expertise."** Then develop it. Each health board should have in-house expertise on health data standards. This is core infrastructure - dependence on vendors for expertise is itself a form of lock-in. Invest in training. Hire specialists. Work with academic partners. Boards can share expertise and learn from each other, but each needs the capability to understand and implement standards independently. This distributed expertise is more resilient than centralised teams who become bottlenecks.
 
 ## What This Means Practically
 
-So how does NHS Wales actually adopt open standards?
+So how do health boards actually adopt open standards while maintaining autonomy?
 
-**Mandate them in procurement**. Every new system procurement should require full implementation of relevant open standards - HL7 FHIR for data exchange, SNOMED CT for terminology, etc. Not "roadmap to support" or "proprietary API plus export function", but actual standards compliance that can be tested and verified.
+**Mandate standards in procurement**. Each health board should require full implementation of relevant open standards in every new system - HL7 FHIR for data exchange, SNOMED CT for terminology, etc. Not "roadmap to support" or "proprietary API plus export function", but actual standards compliance that can be tested and verified. Boards can coordinate on which standards to mandate, but each controls their own procurement.
 
-**Test standards compliance rigorously**. Vendors will claim standards support without actually implementing it properly. Require independent testing. Use Connectathons and conformance testing to verify that systems actually interoperate, not just that they technically implement some version of a standard.
+**Test standards compliance rigorously**. Vendors will claim standards support without actually implementing it properly. Require independent testing. Use Connectathons and conformance testing to verify that systems actually interoperate. Health boards can share testing frameworks and results - if Cwm Taf Morgannwg verifies a system's FHIR compliance, other boards benefit from that work.
 
-**Sunset proprietary integrations**. Set a timeline for replacing proprietary interfaces with standards-based ones. Make it clear that proprietary lock-in is no longer acceptable and won't be renewed. Give vendors notice, but be firm.
+**Sunset proprietary integrations**. Set timelines for replacing proprietary interfaces with standards-based ones. Make it clear that proprietary lock-in is no longer acceptable and won't be renewed. Give vendors notice, but be firm. Boards can coordinate timelines, but each makes their own decisions about their systems.
 
-**Invest in transition**. Migration to open standards requires resources - technical work, data transformation, testing, training. Budget for this properly. Treat it as infrastructure investment, which it is, not as discretionary spending.
+**Invest in transition**. Migration to open standards requires resources - technical work, data transformation, testing, training. Budget for this properly at the health board level. Treat it as infrastructure investment, which it is, not as discretionary spending. Boards can share costs for common solutions, but each controls their own budget and priorities.
 
-**Build in-house expertise**. DHCW should have staff who deeply understand HL7 FHIR, SNOMED CT, IHE profiles, and other relevant standards. This expertise is necessary for procurement, integration, problem-solving, and maintaining independence from vendors.
+**Build in-house expertise**. Each health board should have staff who deeply understand HL7 FHIR, SNOMED CT, IHE profiles, and other relevant standards. This expertise is necessary for procurement, integration, problem-solving, and maintaining independence from vendors. Boards can share training, collaborate on complex problems, and hire jointly for specialist roles - but expertise should be distributed, not centralised in one organisation.
 
-**Participate in standards development**. Health data standards are developed by international bodies - HL7, SNOMED International, IHE. NHS Wales should participate in these processes to ensure standards meet Welsh needs. Don't just consume standards - help shape them.
+**Share code openly**. When a health board builds something - an integration module, a clinical tool, a reporting system - release it as open source under a permissive licence. Make it available to other boards, to the wider NHS, to anyone who can benefit. This isn't charity - it's enlightened self-interest. Other boards will reciprocate. Solutions improve through collaborative development. Costs decrease through shared work. This only works if the code is actually open source, not "available on request" or "shared under agreement" - publish it on GitHub or GitLab and make it genuinely free to use and modify.
 
-**Share solutions**. When NHS Wales builds integrations or tools based on open standards, make them available to other health systems. Open standards enable sharing - take advantage of that. Other health systems will reciprocate. Everyone benefits.
+**Coordinate on standards, not on solutions**. Health boards should agree on which open standards to implement, how to test compliance, what terminology to use. This coordination ensures interoperability. But boards shouldn't be forced to use the same systems or the same code. One board might build their own solution. Another might adopt open source software from elsewhere. A third might contract with a vendor who implements the standards. All approaches work as long as they implement the agreed standards. Diversity of solutions is strength, not weakness - it spreads risk, enables experimentation, and prevents monocultures.
 
-**Learn from others**. NHS England is mandating HL7 FHIR. NHS Scotland is adopting open standards. Countries like Estonia, Denmark, and Australia have built national health infrastructure on open standards. Learn from their successes and failures. Don't reinvent wheels.
+**Learn from others**. NHS England is mandating HL7 FHIR. NHS Scotland is adopting open standards. Countries like Estonia, Denmark, and Australia have built national health infrastructure on open standards. The VA in the US releases their healthcare software as open source. Learn from their successes and failures. Adapt their code when it's useful. Don't reinvent wheels, but don't blindly copy either.
 
-**Start with high-value use cases**. Don't try to replace everything at once. Start with use cases where interoperability has the highest clinical and financial value - perhaps shared care records, or lab results integration, or e-prescribing. Demonstrate success, build expertise, then expand.
+**Start with high-value use cases**. Don't try to replace everything at once. Start with use cases where interoperability has the highest clinical and financial value - perhaps shared care records across health boards, or lab results integration, or e-prescribing. Demonstrate success, build expertise, then expand. Let early adopters prove the approach, then other boards can follow with confidence.
 
 ## Why This Matters Now
 
