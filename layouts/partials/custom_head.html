@@ -156,6 +156,8 @@
 
 html {
   height: 100% !important;
+  overflow-x: hidden !important;
+  width: 100% !important;
 }
 
 body {
@@ -168,6 +170,18 @@ body {
   padding: 0 !important;
   margin: 0 !important;
   background-color: #f6f4ef !important;
+  max-width: none !important;
+  overflow-x: hidden !important;
+  width: 100% !important;
+}
+
+/* Prevent horizontal scroll on all elements */
+* {
+  max-width: 100%;
+}
+
+/* Allow specific elements to have their own width */
+header, main, footer, .footer-wrapper {
   max-width: none !important;
 }
 
@@ -189,7 +203,6 @@ header.nav-hidden {
 
 main {
   max-width: var(--width) !important;
-  width: 100% !important;
   margin: 0 auto !important;
   padding: 0 20px !important;
   flex: 1 !important;
@@ -608,9 +621,15 @@ sup {
 blockquote {
   border-left: 3px solid #000 !important;
   padding-left: 20px !important;
-  margin-left: -23px !important;
+  margin-left: 0 !important;
   font-style: italic !important;
   color: var(--blockquote-color) !important;
+}
+
+@media (min-width: 769px) {
+  blockquote {
+    margin-left: -23px !important;
+  }
 }
 
 /* Recommended posts styling */
