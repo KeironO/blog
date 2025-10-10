@@ -373,15 +373,7 @@ img[alt="me"] {
   object-fit: cover !important;
 }
 
-/* Lazy loading fallback for older browsers */
-img[loading="lazy"] {
-  opacity: 0 !important;
-  transition: opacity 0.3s !important;
-}
-
-img[loading="lazy"].loaded {
-  opacity: 1 !important;
-}
+/* Lazy loading is handled natively by browsers */
 
 /* Improve Core Web Vitals */
 img, iframe, video {
