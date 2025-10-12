@@ -1,8 +1,8 @@
 +++
-title = "Another World Is Possible"
+title = "Another World Is Possible: How Wales can fix data"
 date = 2025-10-11
 draft = false
-description = "Estonia, Denmark, and Australia prove that national health systems can build on open standards at scale—and avoid vendor lock-in entirely"
+description = "Three countires have proven that national health systems can build on open standards at scale"
 tags = ['nhs', 'healthcare', 'technology', 'interoperability', 'open-standards', 'politics']
 +++
 
