@@ -1,5 +1,5 @@
 +++
-title = "Subscribe via Email"
+title = "Subscribe"
 type = "page"
 +++
 
