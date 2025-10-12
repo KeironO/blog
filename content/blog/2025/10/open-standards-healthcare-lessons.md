@@ -95,6 +95,8 @@ Australia's Sparked initiative is explicitly designed around collaborative devel
 
 [^sparked]: Sparked is led by CSIRO's Australian eHealth Research Centre in partnership with the Department of Health, the Australian Digital Health Agency, and HL7 Australia, with governance focused on community participation rather than top-down control.
 
+{{< subscribe >}}
+
 ## What This Means for the NHS
 
 These three countries prove that national health systems can successfully build on open standards at scale. The results - 99% digital prescription rates, millions of messages exchanged monthly, hundreds of millions in efficiency savings - aren't from niche pilot projects. They're from core national health infrastructure serving entire populations.
