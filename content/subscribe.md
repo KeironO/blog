@@ -32,17 +32,6 @@ Enter your email below to subscribe via Follow.it:
   <button type="submit" style="padding: 12px 24px; background: #000; color: #fff; border: none; font-size: 1em; cursor: pointer; font-weight: 600; transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='#333'" onmouseout="this.style.backgroundColor='#000'">Subscribe</button>
 </form>
 
-### Alternative: Use Blogtrottr
-
-If you prefer to use Blogtrottr instead:
-
-1. Go to [Blogtrottr.com](https://blogtrottr.com/)
-2. Enter this blog's RSS feed: <span class="copy-url" style="cursor: pointer; background: #f0f0f0; padding: 2px 6px; border-radius: 3px; user-select: all; font-family: monospace; font-size: 0.9em;" onclick="navigator.clipboard.writeText('https://keiron.xyz/blog/index.xml').then(() => { this.textContent = 'Copied!'; setTimeout(() => { this.textContent = 'https://keiron.xyz/blog/index.xml'; }, 2000); })" title="Click to copy">https://keiron.xyz/blog/index.xml</span>
-3. Enter your email address
-4. Choose your delivery frequency (real-time, daily digest, or weekly)
-5. Click "Feed Me"
-6. Confirm your subscription via the email they send you
-
 ## For RSS Purists
 
 If you already use an RSS reader (and you should - they're great), just add this feed:
