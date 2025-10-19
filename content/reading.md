@@ -11,6 +11,9 @@ So instead of feeding another corporate platform with my reading data, I'm track
 
 <div class="book-grid">
 
+{{< book isbn="9780241455678" title="Fascism and Democracy" author="George Orwell" publisher="Penguin Books Ltd" year="2025" month="October" >}}
+{{< /book >}}
+
 {{< book isbn="9781804292143" title="The Internet Con: How to Seize the Means of Computation" author="Cory Doctorow" publisher="Verso" year="2025" month="October" >}}
 {{< /book >}}
 
