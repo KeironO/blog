@@ -8,7 +8,7 @@ tags = ['politics', 'greens', 'polanski', 'labour', 'class', 'environment']
 
 {{< thumb "/images/blog/2025/10/green-party-sign.jpg" "full" "Green Party campaign sign. (Credit: Mr Ignavy, [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:It_must_be_May_-_geograph.org.uk_-_4794778.jpg), CC-BY-SA 2.0)" >}}
 
-Less than a month ago, I wrote about [why I left the Green Party](/blog/2025/09/polanski/) before Zack Polanski's leadership vote was even held. I agreed with his class-first approach, with his eco-populism, with linking climate action to wealth redistribution. But I left anyway, worried that the Greens would abandon environmental expertise to become "Old Labour with solar panels," leaving a vacuum in dedicated environmental advocacy.
+Less than a month ago, I wrote about [why I left the Green Party](/2025/09/polanski/) before Zack Polanski's leadership vote was even held. I agreed with his class-first approach, with his eco-populism, with linking climate action to wealth redistribution. But I left anyway, worried that the Greens would abandon environmental expertise to become "Old Labour with solar panels," leaving a vacuum in dedicated environmental advocacy.
 
 I called it "an experiment with stakes too high to get wrong."
 
@@ -205,7 +205,7 @@ The timing matters. Polanski's surge has coincided with the organisational disas
 
 Zarah Sultana announced it publicly in July without warning Corbyn, breaking agreed secrecy. In September, she sent out an unauthorised email opening paid membership, which Corbyn had to publicly disavow and relaunch days later. The party's now registered with Corbyn as leader and Sultana apparently sidelined.[^11]
 
-I wrote about [the problems with hero worship](/blog/2025/10/on-heroes/) in movements. Your Party demonstrated exactly those problems: competing personalities, unilateral decisions, no democratic structures, no collective control. Just chaos.
+I wrote about [the problems with hero worship](/2025/10/on-heroes/) in movements. Your Party demonstrated exactly those problems: competing personalities, unilateral decisions, no democratic structures, no collective control. Just chaos.
 
 And where did the disillusioned left-wing voters go? Not back to Labour. Not into political apathy. To the Greens. To an actual organisation with actual structures, led by someone who could articulate their politics without the organisational shambles.
 
