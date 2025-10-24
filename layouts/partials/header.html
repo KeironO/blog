@@ -1,12 +1,12 @@
 <style>
-.header-wrapper {
-  margin-bottom: 20px;
-}
-
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 15px;
+  margin-bottom: 20px;
 }
 
 .header-container.sticky {
@@ -18,9 +18,9 @@
   padding: 15px 20px;
   transition: top 0.3s ease-in-out;
   z-index: 1000;
-  max-width: var(--width);
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .header-container.sticky.visible {
@@ -62,25 +62,91 @@ nav a:hover {
   color: var(--link-color);
 }
 
+.hamburger-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger-toggle span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.hamburger-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
+}
+
 @media (max-width: 768px) {
   .header-container {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+    gap: 0;
+    justify-content: flex-start;
+  }
+
+  .title {
+    margin-right: auto;
+  }
+
+  .hamburger-toggle {
+    display: flex;
+    flex-shrink: 0;
+    padding: 0 20px;
   }
 
   nav {
-    flex-wrap: wrap;
-    gap: 0.5em;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #f6f4ef;
+    border-top: 1px solid #e0e0e0;
+    flex-direction: column;
+    gap: 0;
+    padding: 15px 20px;
+    width: 100vw;
+    margin-left: -15px;
+  }
+
+  nav.active {
+    display: flex;
   }
 
   nav a {
     font-size: 0.9em;
+    padding: 14px 0;
+    border-bottom: 1px solid #ddd;
+    display: block;
+    text-align: center;
+  }
+
+  nav a:last-child {
+    border-bottom: none;
   }
 
   .site-title {
     font-size: 0.9em;
     padding: 6px 10px;
+    margin-bottom: 0;
+  }
+
+  .title {
+    width: 100%;
   }
 }
 </style>
@@ -89,6 +155,11 @@ nav a:hover {
   <a href="{{ "" | relURL }}" class="title">
     <h2 class="site-title">{{ .Site.Title }}</h2>
   </a>
+  <button class="hamburger-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
   <nav>{{- partial "nav.html" . -}}</nav>
 </div>
 
@@ -96,8 +167,39 @@ nav a:hover {
 (function() {
   let lastScrollTop = 0;
   const header = document.querySelector('.header-container');
+  const hamburger = document.querySelector('.hamburger-toggle');
+  const nav = document.querySelector('nav');
   const threshold = window.innerHeight / 2;
 
+  // Hamburger menu toggle
+  hamburger.addEventListener('click', function() {
+    hamburger.classList.toggle('active');
+    nav.classList.toggle('active');
+    hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active'));
+  });
+
+  // Close menu when a link is clicked
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function() {
+      hamburger.classList.remove('active');
+      nav.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', function(event) {
+    const isClickInsideMenu = nav.contains(event.target);
+    const isClickOnHamburger = hamburger.contains(event.target);
+
+    if (!isClickInsideMenu && !isClickOnHamburger && nav.classList.contains('active')) {
+      hamburger.classList.remove('active');
+      nav.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // Sticky header behavior
   window.addEventListener('scroll', function() {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
