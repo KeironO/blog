@@ -2,9 +2,11 @@
 title = "Caerphilly"
 date = 2025-10-24
 draft = false
-description = "A glimpse of the future of Welsh politics"
+description = "A glimpse of the potential future of Welsh politics"
 tags = ["politics", "wales", "plaid"]
 +++
+
+{{< thumb "/images/blog/2025/10/Caerphilly_Castle_south.jpg" "full" "Caerphilly Castle, a landmark of the medieval occupation of Wales, 25 March 2018. (Credit: [Cadw](https://commons.wikimedia.org/wiki/File:Caerphilly_Castle_south.jpg), CC-SA-4.0.)" >}}
 
 The Caerphilly by-election was supposed to be Reform UK's crowning moment in Wales. A safe Labour seat, a disengaged electorate, a populist party riding high on anti-immigration sentiment and promises to "fix" the country. The media had spent months portraying the constituency as a hotbed of Reform support, a microcosm of a wider rightward shift sweeping through the South Wales Valleys. Nigel Farage pitched up, did his thing, and waited for the inevitable victory. Instead, he got humiliated. And somewhere in the rubble of his campaign, Labour is discovering that it might not have a Wales left to govern.
 
