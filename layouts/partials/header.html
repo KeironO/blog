@@ -4,9 +4,10 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  max-width: var(--width);
+  margin: 0 auto 20px auto;
   box-sizing: border-box;
   padding: 0 15px;
-  margin-bottom: 20px;
 }
 
 .header-container.sticky {
@@ -18,9 +19,11 @@
   padding: 15px 20px;
   transition: top 0.3s ease-in-out;
   z-index: 1000;
-  max-width: 100%;
-  margin-left: 0;
-  margin-right: 0;
+  width: 100%;
+  max-width: var(--width);
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
 }
 
 .header-container.sticky.visible {
