@@ -5,10 +5,10 @@
 
 set -e
 
-echo "🔨 Building Hugo site with local baseURL..."
-hugo --gc --minify --baseURL "http://localhost:8000"
+echo "Building Hugo site with local baseURL..."
+uv run hugo --gc --minify --baseURL "http://localhost:8000"
 
-echo "📁 Changing to public directory..."
+echo "Changing to public directory..."
 cd public
 
 echo "Starting Python web server on port 8000..."
@@ -22,6 +22,6 @@ if command -v python3 &> /dev/null; then
 elif command -v python &> /dev/null; then
     python -m SimpleHTTPServer 8000
 else
-    echo "Error: Python not found. Please install Python to use this script."
+    echo "Error: python not found"
     exit 1
 fi
