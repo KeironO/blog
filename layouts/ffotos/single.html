@@ -1,0 +1,67 @@
+{{ define "main" }}
+<content>
+  <div class="post-wrapper">
+    <h1>{{ .Title }}</h1>
+
+    {{ if .Description }}
+    <div class="subtitle-container">
+      <h3 class="post-subtitle">{{ .Description }}</h3>
+    </div>
+    {{ end }}
+
+    {{ if not .Date.IsZero }}
+    <div class="post-meta">
+      <time datetime='{{ .Date.Format "2006-01-02" }}'>
+        {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+      </time>
+    </div>
+    {{ end }}
+
+    <hr class="subtitle-rule">
+
+    <div class="masonry">
+      {{ .Content }}
+    </div>
+  </div>
+</content>
+
+<style>
+.masonry {
+  column-count: 3;
+  column-gap: 16px;
+  margin: 2em 0;
+}
+
+.masonry img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 16px;
+  break-inside: avoid;
+}
+
+.masonry a {
+  break-inside: avoid;
+  display: block;
+}
+
+.masonry figure {
+  margin: 0;
+  break-inside: avoid;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 1024px) {
+  .masonry {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .masonry {
+    column-count: 1;
+  }
+}
+</style>
+
+{{ end }}

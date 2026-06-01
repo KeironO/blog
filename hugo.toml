@@ -93,6 +93,10 @@ enableRobotsTXT = true
     url = "/why/"
     weight = 15
   [[menu.main]]
+    name = "Ffotos"
+    url = "/ffotos/"
+    weight = 17
+  [[menu.main]]
     name = "About"
     url = "/about/"
     weight = 20
