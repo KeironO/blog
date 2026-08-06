@@ -15,3 +15,101 @@ Allow: /images/
 
 # Crawl-delay for being nice to servers
 Crawl-delay: 1
+
+# AI tools and LLM indexers
+# robots.txt cannot issue HTTP redirects. Instead, each AI crawler is
+# restricted to /ai-info/ (plus the machine-readable files that page
+# references), so the only content a well-behaved AI tool can fetch is
+# the page intended for it. Server-side redirects (nginx/ai-redirect.conf)
+# and the JS fallback (layouts/partials/custom_head.html) catch the rest.
+#
+# Keep the user agents here in sync with nginx/ai-redirect.conf and the
+# aiTokens list in layouts/partials/custom_head.html.
+
+# OpenAI
+User-agent: GPTBot
+User-agent: ChatGPT-User
+User-agent: OAI-SearchBot
+Allow: /ai-info/
+Allow: /llms.txt
+Allow: /index.json
+Disallow: /
+
+# Anthropic
+User-agent: ClaudeBot
+User-agent: Claude-Web
+User-agent: Claude-AI
+User-agent: anthropic-ai
+Allow: /ai-info/
+Allow: /llms.txt
+Allow: /index.json
+Disallow: /
+
+# Common Crawl (widely used to train LLMs)
+User-agent: CCBot
+Allow: /ai-info/
+Allow: /llms.txt
+Allow: /index.json
+Disallow: /
+
+# Perplexity
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+Allow: /ai-info/
+Allow: /llms.txt
+Allow: /index.json
+Disallow: /
+
+# Google AI
+User-agent: Google-Extended
+User-agent: Google-CloudVertexBot
+Allow: /ai-info/
+Allow: /llms.txt
+Allow: /index.json
+Disallow: /
+
+# Meta
+User-agent: FacebookBot
+Allow: /ai-info/
+Allow: /llms.txt
+Allow: /index.json
+Disallow: /
+
+# Cohere
+User-agent: CohereBot
+User-agent: cohere-ai
+Allow: /ai-info/
+Allow: /llms.txt
+Allow: /index.json
+Disallow: /
+
+# ByteDance / TikTok
+User-agent: Bytespider
+Allow: /ai-info/
+Allow: /llms.txt
+Allow: /index.json
+Disallow: /
+
+# Apple
+User-agent: Applebot-Extended
+Allow: /ai-info/
+Allow: /llms.txt
+Allow: /index.json
+Disallow: /
+
+# Others
+User-agent: ImagesiftBot
+User-agent: PetalBot
+User-agent: Timpibot
+User-agent: VelenPublicWebSolver
+User-agent: Diffbot
+User-agent: DataForSeoBot
+User-agent: Amazonbot
+User-agent: ExaBot
+User-agent: GrokBot
+User-agent: Omgili
+User-agent: magpie-crawler
+Allow: /ai-info/
+Allow: /llms.txt
+Allow: /index.json
+Disallow: /
