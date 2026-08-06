@@ -6,6 +6,37 @@
   }
 </style>
 
+<!-- Redirect AI tools and LLM indexers to the dedicated AI information page -->
+{{ with site.GetPage "/ai-info" }}
+<script>
+(function () {
+  var aiPath = "{{ .RelPermalink }}";
+  var current = window.location.pathname;
+
+  // Avoid redirect loops when the agent is already on the AI info page
+  if (current === aiPath || current.indexOf(aiPath) === 0) return;
+
+  var ua = (navigator.userAgent || '').toLowerCase();
+  var aiTokens = [
+    'gptbot', 'chatgpt-user', 'oai-searchbot', 'openai',
+    'claudebot', 'claude-web', 'claude-ai', 'anthropic-ai', 'anthropic', 'claude',
+    'ccbot', 'perplexitybot', 'perplexity-user', 'perplexity',
+    'google-extended', 'google-cloud-vertexbot',
+    'facebookbot', 'cohere-ai', 'coherebot', 'cohere',
+    'bytespider', 'applebot-extended', 'imagesiftbot', 'petalbot',
+    'timpibot', 'velenpublicwebsolver', 'diffbot', 'dataforseobot',
+    'amazonbot', 'exabot', 'grokbot', 'omgili', 'magpie-crawler'
+  ];
+  for (var i = 0; i < aiTokens.length; i++) {
+    if (ua.indexOf(aiTokens[i]) !== -1) {
+      window.location.replace(aiPath);
+      return;
+    }
+  }
+})();
+</script>
+{{ end }}
+
 <!-- Resource hints for analytics -->
 <link rel="preconnect" href="https://gc.zgo.at">
 
