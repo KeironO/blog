@@ -7,7 +7,6 @@ theme = 'hugo-bearblog'
 
 # Basic metadata configuration for your blog.
 title = "keiron.xyz"
-author = "Keiron O'Shea"
 copyright = "GNU Free Documentation License"
 languageCode = "en-GB"
 defaultContentLanguage = "en"
@@ -106,6 +105,7 @@ enableRobotsTXT = true
     weight = 25
 
 [params]
+  author = "Keiron O'Shea"
   # The "description" of your website. This is used in the meta data of your generated html.
   description = "Thoughts and musings from Keiron O'Shea on technology, politics, healthcare, programming, digital rights, and social democracy. A blog covering data science, FOSS, political analysis, and the intersection of tech and society."
 

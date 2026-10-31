@@ -9,7 +9,7 @@
   "description": {{ with .Description }}{{ . | jsonify }}{{ else }}{{ .Summary | plainify | jsonify }}{{ end }},
   "author": {
     "@type": "Person",
-    "name": {{ .Site.Author | jsonify }},
+    "name": {{ .Site.Params.author | jsonify }},
     "url": {{ .Site.BaseURL | jsonify }},
     "jobTitle": "Data Scientist",
     "description": "Data scientist working in healthcare and passionate advocate for Free and Open Source Software",
@@ -20,7 +20,7 @@
   },
   "publisher": {
     "@type": "Person",
-    "name": {{ .Site.Author | jsonify }},
+    "name": {{ .Site.Params.author | jsonify }},
     "url": {{ .Site.BaseURL | jsonify }},
     "logo": {
       "@type": "ImageObject",
@@ -108,7 +108,7 @@
   "dateModified": {{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" | jsonify }},
   "author": {
     "@type": "Person",
-    "name": {{ .Site.Author | jsonify }},
+    "name": {{ .Site.Params.author | jsonify }},
     "url": {{ .Site.BaseURL | jsonify }}
   },
   "mainEntity": {
@@ -130,7 +130,7 @@
   "url": {{ .Site.BaseURL | jsonify }},
   "author": {
     "@type": "Person",
-    "name": {{ .Site.Author | jsonify }},
+    "name": {{ .Site.Params.author | jsonify }},
     "url": {{ .Site.BaseURL | jsonify }},
     "jobTitle": "Data Scientist",
     "description": "Data scientist working in healthcare and passionate advocate for Free and Open Source Software",
@@ -141,7 +141,7 @@
   },
   "publisher": {
     "@type": "Person",
-    "name": {{ .Site.Author | jsonify }},
+    "name": {{ .Site.Params.author | jsonify }},
     "url": {{ .Site.BaseURL | jsonify }}
   },
   "potentialAction": {
@@ -153,7 +153,7 @@
   "copyrightYear": {{ now.Year }},
   "copyrightHolder": {
     "@type": "Person",
-    "name": {{ .Site.Author | jsonify }}
+    "name": {{ .Site.Params.author | jsonify }}
   }
 }
 </script>
@@ -163,7 +163,7 @@
 {
   "@context": "https://schema.org",
   "@type": "Person",
-  "name": {{ .Site.Author | jsonify }},
+  "name": {{ .Site.Params.author | jsonify }},
   "url": {{ .Site.BaseURL | jsonify }},
   "jobTitle": "Data Scientist",
   "description": "Data scientist working in healthcare and passionate advocate for Free and Open Source Software",
@@ -205,12 +205,12 @@
   "inLanguage": {{ .Site.LanguageCode | jsonify }},
   "author": {
     "@type": "Person",
-    "name": {{ .Site.Author | jsonify }},
+    "name": {{ .Site.Params.author | jsonify }},
     "url": {{ .Site.BaseURL | jsonify }}
   },
   "publisher": {
     "@type": "Person",
-    "name": {{ .Site.Author | jsonify }},
+    "name": {{ .Site.Params.author | jsonify }},
     "url": {{ .Site.BaseURL | jsonify }}
   }
 }
